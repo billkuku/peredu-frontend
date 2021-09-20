@@ -1,0 +1,166 @@
+<template>
+    <div class="fs-5">
+        <form @submit.prevent="onClickSubmitProject">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="mb-1">
+                        <label>Program name:</label> 
+                        <input type="text"
+                            maxlength="80" 
+                            style="min-width: 100%"
+                            v-model="project.projectName">
+                    </div>
+                    <div>
+                        <label for="keyword" class="">Fields/Keywords:</label>
+                        <div class="controls">
+                        <input type="text" placeholder="single word recommended" 
+                            v-model="newKeyword" 
+                            @keyup.enter="addTodo(newKeyword, project.keywords)" 
+                            autofocus>
+                        <span class="btn-sm btn-secondary ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
+                        <span class="btn-sm btn-secondary ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
+                        </div>
+                        <ul>
+                            <todo-item v-for="(keyword, index) in project.keywords"
+                                v-bind:key="keyword.index"
+                                v-bind:value="keyword"
+                                v-on:delete="deleteTodo(project.keywords, index)">
+                            </todo-item>
+                        </ul>
+                    </div>
+                    <div>
+                        <label for="course" class="">Courses:</label>
+                        <div class="controls">
+
+                            <select v-bind="project.course" class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option v-for="course in project.course" v-bind:key="course.courseName">
+                                    {{ course.courseName }}
+                                </option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="background-project font-title2 fs-3 text-center py-5">
+                        <p>Tell Student</p>
+                        <p>what and how you teach</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="pt-2 border-top">
+                    <label for="discription">Discription</label> 
+                    <pre><textarea name="discription"
+                        style='min-width: 100%'
+                        rows=7  
+                        placeholder="" 
+                        @keyup='charCount(project.discription, 550)'
+                        maxlength="550"
+                        v-model="project.discription">
+                    </textarea></pre>
+                    <!-- <p class="text-end">{{ remaincharactersText }}</p> -->
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <input type="checkbox" name="enabled" id="checkbox" v-model="project.enabled">
+                    <label for="enabled" class="ms-2">click to activate program, Anyone can see the program after you activate it.</label>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="text-center">
+                    <button class="btn btn-outline-dark btn-lg mt-2">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue"
+import TodoItem from '../components/TodoItem.vue'
+import MixinTextarea from '../mixins/TextareaCounter'
+import MixinTodo from '../mixins/TodoEdit'
+import axios from 'axios'
+
+export default defineComponent({
+    name: 'Projectedit',
+    components: {
+        TodoItem
+    },
+    mixins: [MixinTextarea, MixinTodo],
+    data() {
+        return {
+            currentUrl:"",
+            project: {
+                id: "",
+                projectName: "",
+                discription: "",
+                enabled: false,
+                providerId: "",
+                keywords: [],
+                course:[{courseName:"", discription:""}]
+            },
+            newKeyword:"",
+            newCourse:""
+        }
+    },
+    methods: {
+        onClickSubmitProject() {
+            axios({
+                method: "post",
+                url: '/api/projects/edit/'+this.project.id,
+                data: {
+                    id: this.project.id,
+                    projectName: this.project.projectName,
+                    discription: this.project.discription,
+                    enabled: this.project.enabled,
+                    providerId: this.project.providerId,
+                    keywords: this.project.keywords,
+                    course: this.course,
+                }
+            })
+            .then(response => {
+                alert(response.data), 
+                this.$router.replace({
+                    path: '/projects'}),
+                console.log(response.data)
+                })
+        },
+        getProject() {
+            if(this.$route.params.id!) {
+                this.project.id = this.$route.params.id.toString(),
+                axios.get("/api/projects/edit/"+this.project.id)
+                .then(response => {
+                    this.project = response.data,
+                    console.log(this.project)
+                })
+            }
+        },
+    },
+    activated: function() {
+        this.getProject()
+    },
+    beforeRouteLeave(){
+        this.project = {
+            id: "",
+            projectName: "",
+            discription: "",
+            enabled: false,
+            providerId: "",
+            keywords:[],
+            course: []
+        }
+    },
+})
+</script>
+<style>
+.background-project{
+    background-image: url("../assets/project-edit.png");
+    background-position:center; 
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+</style>
