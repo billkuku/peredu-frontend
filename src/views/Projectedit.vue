@@ -29,17 +29,45 @@
                         </ul>
                     </div>
                     <div>
-                        <label for="course" class="">Courses:</label>
-                        <div class="controls">
 
-                            <select v-bind="project.course" class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option v-for="course in project.course" v-bind:key="course.courseName">
-                                    {{ course.courseName }}
-                                </option>
-                            </select>
+                        <!-- button for modal -->
+                        <button type="button" class="btn btn-outline-dark mt-2" data-bs-toggle="modal" data-bs-target="#providerNameModal">change</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="providerNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="providerNameModal">Edit name as project provider</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="inputCourseName">course name</label>
+                                        <input type="courseName" v-model="newCourse.courseName" class="form-control" id="inputCourseName" aria-describedby="courseName" placeholder="Enter name">
+                                        <label for="inputCourseDiscription">course discription</label> 
 
+                                        <textarea class="form-control" id="inputCourseDiscription" 
+                                            rows="3"
+                                            v-model="newCourse.discription">
+                                        </textarea>
+                                        <small id="courseNameHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" @click="addTodo(newCourse, project.course)" class="btn btn-primary">Add Course</button>
+                                    </div>
+                                    <ul>
+                                       <todo-item v-for="(courseName) in project.course"
+                                            v-bind:key="courseName"
+                                            v-bind:value="discription"
+                                            v-on:delete="deleteTodo(project.course, courseName)">
+                                        </todo-item>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="col-sm">
@@ -101,10 +129,10 @@ export default defineComponent({
                 enabled: false,
                 providerId: "",
                 keywords: [],
-                course:[{courseName:"", discription:""}]
+                course:[]
             },
             newKeyword:"",
-            newCourse:""
+            newCourse:{}
         }
     },
     methods: {
