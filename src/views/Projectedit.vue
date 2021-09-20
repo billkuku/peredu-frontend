@@ -31,21 +31,24 @@
                     <div>
 
                         <!-- button for modal -->
-                        <button type="button" class="btn btn-outline-dark mt-2" data-bs-toggle="modal" data-bs-target="#providerNameModal">change</button>
+                        <button type="button" class="btn btn-outline-dark mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add Course</button>
                         <!-- Modal -->
-                        <div class="modal fade" id="providerNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
+                        <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="providerNameModal">Edit name as project provider</h5>
+                                        <h5 class="modal-title" id="courseNameModal">Edit name as project provider</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <label for="inputCourseName">course name</label>
-                                        <input type="courseName" v-model="newCourse.courseName" class="form-control" id="inputCourseName" aria-describedby="courseName" placeholder="Enter name">
+                                        <input type="courseName" 
+                                            v-model="newCourse.courseName" 
+                                            class="form-control" id="inputCourseName" aria-describedby="courseName" 
+                                            placeholder="Enter name">
                                         <label for="inputCourseDiscription">course discription</label> 
-
-                                        <textarea class="form-control" id="inputCourseDiscription" 
+                                        <textarea 
+                                            class="form-control" id="inputCourseDiscription" 
                                             rows="3"
                                             v-model="newCourse.discription">
                                         </textarea>
@@ -53,21 +56,18 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" @click="addTodo(newCourse, project.course)" class="btn btn-primary">Add Course</button>
+                                        <button type="button" @click="addTodo(newCourse, project.courses)" class="btn btn-primary">Add Course</button>
                                     </div>
-                                    <ul>
-                                       <todo-item v-for="(courseName) in project.course"
-                                            v-bind:key="courseName"
-                                            v-bind:value="discription"
-                                            v-on:delete="deleteTodo(project.course, courseName)">
-                                        </todo-item>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
-
-
-
+                        <ul>
+                            <todo-item v-for="(course, index) in project.courses"
+                                v-bind:key="course.index"
+                                v-bind:value="course.courseName"
+                                v-on:delete="deleteTodo(project.courses, index)">
+                            </todo-item>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm">
@@ -129,10 +129,13 @@ export default defineComponent({
                 enabled: false,
                 providerId: "",
                 keywords: [],
-                course:[]
+                courses:[]
             },
             newKeyword:"",
-            newCourse:{}
+            newCourse:{
+                courseName:"",
+                discription:""
+            }
         }
     },
     methods: {
@@ -147,7 +150,7 @@ export default defineComponent({
                     enabled: this.project.enabled,
                     providerId: this.project.providerId,
                     keywords: this.project.keywords,
-                    course: this.course,
+                    courses: this.project.courses,
                 }
             })
             .then(response => {
@@ -179,7 +182,7 @@ export default defineComponent({
             enabled: false,
             providerId: "",
             keywords:[],
-            course: []
+            courses: []
         },
         this.newKeyword=""
     }
