@@ -152,8 +152,9 @@ export default defineComponent({
             providerId: "",
             keywords:[],
             course: []
-        }
-    },
+        },
+        this.newKeyword=""
+    }
 })
 </script>
 <style>
