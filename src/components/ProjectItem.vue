@@ -11,27 +11,30 @@
     
     <h4>{{this.currentProject.providerName}}</h4><br>
     <h6>{{this.currentProject.discription}}</h6>
-    <ul class="mt-5 text-center border">
-    <div v-for="(course, index) in currentProject.courses"
-        v-bind:key="index"
-        v-bind:value="courseName">
-        <div class="accordion accordion-flush" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-                    {{course.courseName}}
-                </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    {{course.discription}}
-                </div>
+    <div class="mt-5">
+        <h6 class="fs-5 font-title2">Courses of the program:</h6>
+        <ul class="">
+            <div v-for="(course, index) in currentProject.courses"
+                v-bind:key="index"
+                v-bind:value="courseName">
+                <div class="accordion accordion-flush" id="accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" v-bind:id="'flush-heading-'+index">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#flush-collapse-'+index" aria-expanded="true" v-bind:aria-controls="'flush-collapse-'+index">
+                            {{course.courseName}}
+                        </button>
+                        </h2>
+                        <div v-bind:id="'flush-collapse-'+index" class="accordion-collapse collapse" v-bind:aria-labelledby="'flush-heading-'+index" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                {{course.discription}}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div>
+        </ul>   
     </div>
-    </ul>
     <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="tooltip" data-bs-placement="top" title="apply for the project">
         Apply
     </button>
