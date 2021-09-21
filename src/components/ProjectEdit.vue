@@ -31,13 +31,14 @@
                     <div>
 
                         <!-- button for modal -->
-                        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Click edit the courses included in the project</button>
+                        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Click add and edit course included in the program</button>
+                        <p class="fs-6 text-muted">currently course can't be modified after added, but you can delete and add again.</p>
                         <!-- Modal -->
                         <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="courseNameModal">Edit name as project provider</h5>
+                                        <h5 class="modal-title" id="courseNameModal">Add a course</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
