@@ -82,6 +82,10 @@ export default defineComponent({
     color: white;
     font-size: 30px;
 }
+.accordion-button:hover{
+  background-color: gray;
+  color:white;
+}
 /* .wrapper{
   background-color: rgb(247, 241, 241);
 } */

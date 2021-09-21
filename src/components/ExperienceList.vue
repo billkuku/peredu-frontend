@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row text-center">
       <div v-if="windowInnerWidth>1200" class="col-sm-5 me-5">
-        <img class="img-fluid" src="../assets/find-edit-row.png">
+        <img class="img-fluid" src="../assets/experience-list.png">
       </div>
       <div class="col-sm-auto">
         <div class="table-responsive">

@@ -40,7 +40,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/account/profile',
         name: 'Profile1',
-        component: () => import(/* webpackChunkName: "account" */ '../views/AccountProfile.vue'),
+        component: () => import(/* webpackChunkName: "account" */ '../components/AccountProfile.vue'),
         // meta: {requiresAuth: true},
       }
     ]
@@ -54,23 +54,23 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/projects/list',
         name: 'Projectlist',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Projectlist.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ProjectList.vue'),
       },
       {
         path: '/projects/edit',
         name: 'Projectcreate',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Projectedit.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ProjectEdit.vue'),
         meta: {requiresAuth: true}
       },
       {
         path: '/projects/edit/:id',
         name: 'Projectedit',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Projectedit.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ProjectEdit.vue'),
       },
       {
         path: '/projects/archive',
         name: 'Projectarchive',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Projectarchive.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ProjectArchive.vue'),
       }
     ]
   },
@@ -83,19 +83,19 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/experiences/list',
         name: 'Experiencelist',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Experiencelist.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ExperienceList.vue'),
       },
       {
         path: '/experiences/edit',
         name: 'Experiencecreate',
         props: true,
-        component: () => import(/* webpackChunkName: "about" */ '../views/Experienceedit.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ExperienceEdit.vue'),
         meta: {requiresAuth: true},
       },
       {
         path: '/experiences/edit/:id',
         name: 'Experienceedit',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Experienceedit.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/ExperienceEdit.vue'),
       }
     ]
   },
