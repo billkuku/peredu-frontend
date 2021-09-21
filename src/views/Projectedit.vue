@@ -20,7 +20,7 @@
                         <span class="btn-sm btn-secondary ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
                         <span class="btn-sm btn-secondary ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
                         </div>
-                        <ul>
+                        <ul class="mt-2">
                             <todo-item v-for="(keyword, index) in project.keywords"
                                 v-bind:key="keyword.index"
                                 v-bind:value="keyword"
@@ -31,7 +31,7 @@
                     <div>
 
                         <!-- button for modal -->
-                        <button type="button" class="btn btn-outline-dark mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add Course</button>
+                        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Click edit the courses included in the project</button>
                         <!-- Modal -->
                         <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
                             <div class="modal-dialog">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <ul>
+                        <ul class="mt-2">
                             <todo-item v-for="(course, index) in project.courses"
                                 v-bind:key="course.index"
                                 v-bind:value="course.courseName"
