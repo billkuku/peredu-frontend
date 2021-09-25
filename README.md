@@ -1,4 +1,6 @@
 # peredu
+deployment: https://peredu.herokuapp.com 
+(only frontend deployed, backend is temporarily not deployed due to cost and technical reasons, but a test version will be deployed in several days)
 
 ## Project setup
 ```
