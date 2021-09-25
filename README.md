@@ -1,4 +1,5 @@
 # peredu
+deployment: https://peredu.herokuapp.com
 
 ## Project setup
 ```
