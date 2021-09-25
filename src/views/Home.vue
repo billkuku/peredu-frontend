@@ -22,7 +22,7 @@
         <span class="text-uppercase fs-4">
           <span ><font-awesome-icon icon="school" size="1x" class="fa-color"/></span>&nbsp;As school
         </span> 
-        <br> publish your program, help</div>
+        <br> publish your education program, help</div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>
       <div class="mt-3"><button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program</button></div>
