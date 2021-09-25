@@ -1,13 +1,13 @@
 <template>
 <div class="container">
   <div class="text-center home-middelword">
-    Learn and Work start with sharing
+    Learn and Work start with Sharing
   </div>
   <div class="text-center mt-3">
     <button class="btn btn-outline-dark fs-4">Join us !</button>
   </div>
-  <div class="d-flex justify-content-around mt-5 border-top border-3 pt-5">
-    <div class="col-sm fs-5 font-propagenda pe-5 text-end">
+  <div class="row d-flex justify-content-around mt-5 border-top border-3 pt-5">
+    <div class="col-sm fs-5 font-propagenda pe-5 text-end mb-4">
       <div>
         <span class="text-uppercase fs-4">
           <font-awesome-icon icon="user-graduate" size="1x" class="fa-color"/>&nbsp;As student
@@ -17,7 +17,7 @@
       <div class="fs-5 font-title1-color">- other student choose.</div>
       <div class="mt-3"><button @click="clickCreateExperience" type="button" class="btn-first btn-lg" style="width: 220px;">Share Experience</button></div>
     </div><br>
-    <div class="ms-5 col-sm fs-5 font-propagenda ps-5">
+    <div class="col-sm fs-5 font-propagenda ps-5">
       <div>
         <span class="text-uppercase fs-4">
           <span ><font-awesome-icon icon="school" size="1x" class="fa-color"/></span>&nbsp;As school
