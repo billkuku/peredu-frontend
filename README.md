@@ -1,11 +1,14 @@
 # peredu
-deployment: https://peredu.herokuapp.com 
-(only frontend deployed, backend is temporarily not deployed due to cost and technical reasons, but a test version will be deployed in several days)
-to test backend could use postman, post followed json to https://peredu-backend.herokuapp.com/api/auth/signin 
-{
-  "email":"beierhao@hotmail.com",
-  "password":"password"    
-}
+frontend-deployment: https://peredu.herokuapp.com 
+backend-deployment: https://peredu-backend.herokuapp.com 
+(full stack project, backend developed with java-spring)
+If want to login into the system, you can sign up your own accout, or with my test accout: {email: beierhao@hotmail.com, password: password}
+
+if report "Cannot GET xxx" error, pls enter original URL above.
+
+## CI/CD with heroku.
+front-end deloyed direct with heroku deployment services
+back-end deployment use github actions to heroku.
 
 ## Project setup
 ```
