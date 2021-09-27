@@ -6,7 +6,7 @@ module.exports = {
         target: 'https://peredu-backend.herokuapp.com',
         // target: 'http://localhost:8082',
         ws: true,
-        pathRewrite: { "^/api": "/" },
+        // pathRewrite: { "^/api": "/" },
         changeOrigin: true
       }
     }
