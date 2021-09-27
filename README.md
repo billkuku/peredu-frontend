@@ -1,6 +1,11 @@
 # peredu
 deployment: https://peredu.herokuapp.com 
 (only frontend deployed, backend is temporarily not deployed due to cost and technical reasons, but a test version will be deployed in several days)
+to test backend could use postman, post followed json to https://peredu-backend.herokuapp.com/api/auth/signin 
+{
+  "email":"beierhao@hotmail.com",
+  "password":"password"    
+}
 
 ## Project setup
 ```
