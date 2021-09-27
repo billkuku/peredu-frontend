@@ -2,9 +2,11 @@
 frontend-deployment: https://peredu.herokuapp.com 
 backend-deployment: https://peredu-backend.herokuapp.com 
 (full stack project, backend developed with java-spring)
-If want to login into the system, you can sign up your own accout, or with my test accout: {email: beierhao@hotmail.com, password: password}
+If want to login into the system, you can either sign up your own accout, or with my test accout: {email: beierhao@hotmail.com, password: password}
 
 if report "Cannot GET xxx" error, pls enter original URL above.
+
+Some feature could not be used after deployed (i.g. Search), i'm trying to find the reason.
 
 ## CI/CD with heroku.
 front-end deloyed direct with heroku deployment services
