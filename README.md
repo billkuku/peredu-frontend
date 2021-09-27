@@ -5,6 +5,7 @@ backend-deployment: https://peredu-backend.herokuapp.com
 If want to login into the system, you can either sign up your own account, or with my test account: {email: beierhao@hotmail.com, password: password}
 For testing, login first, then click Username-Button top-right, choose program and create a program.
 
+Login takes much more time then other website, because you need first awake the test-backend-server (awake atomatically, you don't need to do anything), cause i did't pay for a standard-server.
 if report "Cannot GET xxx" error, pls enter original URL above.
 
 Some feature could not be used after deployment (i.g. Search), i'm trying to find the reason.
