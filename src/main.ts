@@ -11,12 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import StarRating from 'vue-star-rating';
 import { DatePicker } from "ant-design-vue";
 import "ant-design-vue/dist/antd.css"
-
+import axios from 'axios'
 
 require('@/store/subscriber')
 library.add(faUserSecret, faArchive, faInbox, faEdit, faStar, faTrashAlt, faStarHalfAlt, faShareSquare, faUserGraduate, faSchool)
 store.dispatch('auth/attempt', localStorage.getItem('token'))
 
+axios.defaults.baseURL = '/api'
 
 createApp(App)
 .use(store)
