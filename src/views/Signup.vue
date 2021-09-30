@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <img src="../assets/logo.png" alt="Peredu-Logo" class="mt-1 img-fluid" width="500"/>
-                <h2>A platform for educational projects in all fields</h2>
+                <h3>A platform for educational projects in all fields</h3>
             </div>
         </div>
         <div class="row">
@@ -36,11 +36,9 @@
 import { defineComponent } from "vue";
 import axios from 'axios';
 
-
 export default defineComponent({
     name: 'Signup',
     components: {
-    
     },
     data() {
         return{
@@ -49,8 +47,6 @@ export default defineComponent({
             signupResult:""
         }
     },
-
-
     methods: {
         onClickRegist(){
             axios({
