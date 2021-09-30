@@ -1,15 +1,15 @@
 <template>
   <div class="table-responsive">
     <table class="table table-hover table-sm table-responsive">
-    <thead class="thead-dark">
-        <tr>
-        <th scope="col">Program</th>
-        <th scope="col-sm-auto">discription</th>
-        <th scope="col">edit</th>
-        <th scope="col">archive</th>
-        </tr>
-    </thead>
-    <tbody>
+      <thead class="thead-dark">
+          <tr>
+          <th scope="col">Program</th>
+          <th scope="col-sm-auto">discription</th>
+          <th scope="col">edit</th>
+          <th scope="col">archive</th>
+          </tr>
+      </thead>
+      <tbody>
         <tr v-for="project in projects" :key="project.id">
           <td >{{ project.projectName }}</td>
           <td >{{ project.discription }}</td>
@@ -20,8 +20,16 @@
             </router-link>
           </td>
         </tr>
-    </tbody>
+      </tbody>
     </table>
+    <div v-if="loadStatus===false">
+      <div class="fs-3">
+        Loading
+        <div class="spinner-border text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
   </div>
   <router-link to="/projects/edit" class="btn btn-outline-dark mt-2">Create a Program</router-link>
 </template>
@@ -37,18 +45,17 @@ export default defineComponent({
   },
   data() {
     return {
-       testmsg:"",
        projects:"",
-       projectId: ""
+       projectId: "",
+       loadStatus: false,
     }
   },
   activated() {
     axios
     .get('/api/projects/list')
     .then(response => {
-        this.testmsg = response.data,
         this.projects = response.data,
-        console.log(this.testmsg)
+        this.loadStatus = true
     })
   },
   beforeRouteLeave(){

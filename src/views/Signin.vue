@@ -9,19 +9,22 @@
     <div>
       <div class="col-sm-5 mt-3 center">
         <form @submit.prevent="onClickLogin">
-              <div class="row">
-                <div class="text-center">
-                  <label for="inputEmail" class="col-md-3 mx-4 my-2 text-start">Email</label>
-                  <input type="email" v-model="form.email" class="col-sm-5 mx-4 login-form-control" id="inputEmail">
-                </div>
-              </div>
-              <div class="row">
-                <div class="text-center">
-                  <label for="inputPassword" class="col-md-3 mx-4 my-2 text-start">Password</label>
-                  <input type="password" v-model="form.password" class="col-sm-5 mx-4 login-form-control" id="inputPassword">
-                </div>
-              </div>
-            <button type="submit" class="btn btn-outline-dark mt-3">Login</button>
+          <div class="row">
+            <div class="text-center">
+              <label for="inputEmail" class="col-md-3 mx-4 my-2 text-start">Email</label>
+              <input type="email" v-model="form.email" class="col-sm-5 mx-4 login-form-control" id="inputEmail">
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-center">
+              <label for="inputPassword" class="col-md-3 mx-4 my-2 text-start">Password</label>
+              <input type="password" v-model="form.password" class="col-sm-5 mx-4 login-form-control" id="inputPassword">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-outline-dark mt-3">Login</button>
+          <div v-if="loadStatus===true" class="spinner-border text-secondary mt-1" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </form>
       </div>
     </div>
@@ -44,7 +47,8 @@ export default defineComponent({
         email:'',
         password:''
       },
-       testmsg:""
+      loadStatus: false,
+      testmsg:""
     }
   },
   methods: {
@@ -52,6 +56,7 @@ export default defineComponent({
       signInAction: 'auth/signIn'
     }),
     onClickLogin() {
+      this.loadStatus = true,
       this.signInAction(this.form)
       .then(() => {
                 this.$router.replace({

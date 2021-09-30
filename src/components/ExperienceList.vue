@@ -17,27 +17,35 @@
               </tr>
             </thead>
             <tbody>
-                <tr v-for="experience in experiences" :key="experience.id">
-                  <td>{{ experience.projectName }}</td>
-                  <td>{{ experience.providerName }}</td>
-                  <td>
-                    <star-rating
-                      star-size="20"
-                      :rating="experience.totalRating"
-                      show-rating=false
-                      read-only=true
-                      text-class="rating-text">
-                    </star-rating></td>
-                  <td v-if="experience.enabled=true">published</td>
-                  <td v-else>will be published after review</td>
-                  <td>
-                    <router-link :to="`/experiences/edit/${experience.id}`">
-                      <font-awesome-icon icon="edit" size="1x" class="fa-color"/>
-                    </router-link>
-                  </td>
-                </tr>
+              <tr v-for="experience in experiences" :key="experience.id">
+                <td>{{ experience.projectName }}</td>
+                <td>{{ experience.providerName }}</td>
+                <td>
+                  <star-rating
+                    star-size="20"
+                    :rating="experience.totalRating"
+                    show-rating=false
+                    read-only=true
+                    text-class="rating-text">
+                  </star-rating></td>
+                <td v-if="experience.enabled=true">published</td>
+                <td v-else>will be published after review</td>
+                <td>
+                  <router-link :to="`/experiences/edit/${experience.id}`">
+                    <font-awesome-icon icon="edit" size="1x" class="fa-color"/>
+                  </router-link>
+                </td>
+              </tr>
             </tbody>
           </table>
+          <div v-if="loadStatus===false">
+            <div class="fs-3">
+              Loading
+              <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -56,14 +64,16 @@ export default defineComponent({
   data() {
     return {
        experiences:"",
-       windowInnerWidth: window.innerWidth
+       windowInnerWidth: window.innerWidth,
+       loadStatus: false
     }
   },
   activated() {
     axios
     .get('/api/experiences/list')
     .then(response => {
-        this.experiences = response.data
+        this.experiences = response.data,
+        this.loadStatus = true
     })
   },
   beforeRouteLeave(){
