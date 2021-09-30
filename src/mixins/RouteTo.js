@@ -13,7 +13,13 @@ export default {
             this.$router.replace({ path: '/projects/edit'})
           } else {
             this.$router.replace({path: '/signin'})
-    
+          }
+        },
+        clickToProjectList(){
+          if(this.authenticated){
+            this.$router.replace({ path: '/projects/edit'})
+          } else {
+            this.$router.replace({path: '/signin'})
           }
         }
       }

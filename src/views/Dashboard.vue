@@ -21,7 +21,7 @@
                             <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Account Setting</button></td>
                         </tr>
                         <tr>
-                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Experience Share</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" @click="clickCreateExperience" style="width:100%;">Experience Share</button></td>
                             <td></td>
                         </tr>
                     </table>
