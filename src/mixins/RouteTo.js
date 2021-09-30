@@ -31,7 +31,14 @@ export default {
         },
         clickToSetting(){
           if(this.authenticated){
-            this.$router.replace({ path: '/account'})
+            this.$router.push({ path: '/account'})
+          } else {
+            this.$router.replace({path: '/signin'})
+          }
+        },
+        clickToDashboard(){
+          if(this.authenticated){
+            this.$router.push({ path: '/dashboard'})
           } else {
             this.$router.replace({path: '/signin'})
           }

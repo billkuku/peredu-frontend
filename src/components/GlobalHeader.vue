@@ -11,13 +11,13 @@
           <router-link to="/home" class="nav-link text-dark fs-6">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/dashboard" class="nav-link text-dark fs-6">Dashboard</router-link>
-        </li>
-        <li class="nav-item">
           <router-link to="/usage" class="nav-link text-dark fs-6">Usage</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/about" class="nav-link text-dark fs-6">About</router-link>
+        </li>
+        <li class="nav-item" v-if="user!==null">
+          <div type=button @click="clickToDashboard" class="nav-link text-dark fs-6">Dashboard</div>
         </li>
       </ul>
       <ul v-if="!authenticated" class="navbar-nav ms-auto">
@@ -49,31 +49,32 @@ import { defineComponent } from 'vue'
 import Dropdown from './Dropdown.vue'
 import DropdownItem from './Dropdownitem.vue'
 import { mapGetters, mapActions } from 'vuex'
-
+import RouteTo from '../mixins/RouteTo'
 
 export default defineComponent({
     name:'GlobalHeader',
     components: {
-        Dropdown,
-        DropdownItem
+      Dropdown,
+      DropdownItem
     },
+    mixins: [RouteTo],
     computed: {
-        ...mapGetters({
-            authenticated: 'auth/authenticated',
-            user: 'auth/user'
-        })
+      ...mapGetters({
+        authenticated: 'auth/authenticated',
+        user: 'auth/user'
+      })
     },
     methods: {
-        ...mapActions({
-            signOutAction: 'auth/signOut'
-        }),
-        signOut () {
-            this.signOutAction().then(() => {
-                this.$router.replace({
-                    path: '/signin'
-                })
-            })
-        }
+      ...mapActions({
+          signOutAction: 'auth/signOut'
+      }),
+      signOut () {
+        this.signOutAction().then(() => {
+          this.$router.replace({
+              path: '/signin'
+          })
+        })
+      }
     }
 })
 </script>
