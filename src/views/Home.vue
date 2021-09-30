@@ -6,7 +6,7 @@
   <div v-if="user===null" class="text-center mt-3">
     <button class="btn btn-outline-dark fs-4" @click="clickToSignin">Join us !</button>
   </div>
-  <div class="row d-flex justify-content-around mt-4 border-top border-3 pt-5">
+  <div class="row d-flex justify-content-around mt-4 border-top border-3 pt-4">
     <div class="col-sm fs-5 font-propagenda pe-5 text-end mb-4">
       <div>
         <span class="text-uppercase fs-4">
