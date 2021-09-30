@@ -3,10 +3,10 @@
   <div class="text-center home-middelword">
     Learn and Work start with Sharing
   </div>
-  <div class="text-center mt-3">
-    <button class="btn btn-outline-dark fs-4">Join us !</button>
+  <div v-if="user===null" class="text-center mt-3">
+    <button class="btn btn-outline-dark fs-4" @click="clickToSignin">Join us !</button>
   </div>
-  <div class="row d-flex justify-content-around mt-5 border-top border-3 pt-5">
+  <div class="row d-flex justify-content-around mt-4 border-top border-3 pt-5">
     <div class="col-sm fs-5 font-propagenda pe-5 text-end mb-4">
       <div>
         <span class="text-uppercase fs-4">
@@ -22,7 +22,8 @@
         <span class="text-uppercase fs-4">
           <span ><font-awesome-icon icon="school" size="1x" class="fa-color"/></span>&nbsp;As school
         </span> 
-        <br> publish your education program, help</div>
+        <br> publish your education program, help
+      </div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>
       <div class="mt-3"><button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program</button></div>

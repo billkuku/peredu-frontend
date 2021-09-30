@@ -14,11 +14,11 @@
                     <table class="table fs-5 text-center table-bordered border-white table-color">
                         <tr>
                             <td class="dashboard-btn py-2"><button class="table-color" @click="clickCreateProject" style="width:100%;">Program Publish</button></td>
-                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Program Manage</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" @click="clickToProjectList" style="width:100%;">Program Manage</button></td>
                         </tr>
                         <tr>
-                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Experience Manage</button></td>
-                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Account Setting</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" @click="clickToExperienceList" style="width:100%;">Experience Manage</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" @click="clickToSetting" style="width:100%;">Account Setting</button></td>
                         </tr>
                         <tr>
                             <td class="dashboard-btn py-2"><button class="table-color" @click="clickCreateExperience" style="width:100%;">Experience Share</button></td>

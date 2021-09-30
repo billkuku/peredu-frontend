@@ -32,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "home" */ '../views/Usage.vue'),
   },
   {
-    path: '/account/',
+    path: '/account',
     redirect: '/account/profile',
     name: 'Profile',
     component:() => import(/* webpackChunkName: "projects" */ '../views/Account.vue'),
