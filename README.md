@@ -1,6 +1,6 @@
 # peredu
-frontend-deployment: https://peredu.herokuapp.com (use this for test)
-backend-deployment: https://peredu-backend.herokuapp.com 
+- frontend-deployment: https://peredu.herokuapp.com (use this for test)
+- backend-deployment: https://peredu-backend.herokuapp.com 
 (full stack project, backend developed with java-spring)
 If you want to login into the system, you can either sign up your own account, or with my test account: {email: beierhao@hotmail.com, password: password}
 
