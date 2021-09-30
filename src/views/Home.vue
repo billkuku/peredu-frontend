@@ -43,34 +43,17 @@
 
 import { defineComponent } from 'vue';
 import { mapGetters } from 'vuex';
+import RouteTo from '../mixins/RouteTo'
+
 export default defineComponent({
   name: "usage",
-  components: {
-  },
+  mixins: [RouteTo],
   computed: {
     ...mapGetters({
         authenticated: 'auth/authenticated',
         user: 'auth/user'
       })
     },
-  methods: {
-    clickCreateExperience() {
-      if(this.authenticated){
-        // this.$router.replace({ path: '/experiences/edit'})
-        alert('Use search bar find a project, after find the corresponding project, you will see the star icon of the rating on the project page')
-      } else {
-        this.$router.replace({path: '/signin'})
-      }
-    },
-    clickCreateProject() {
-      if(this.authenticated){
-        this.$router.replace({ path: '/projects/edit'})
-      } else {
-        this.$router.replace({path: '/signin'})
-
-      }
-    }
-  }
 })
 
 </script>

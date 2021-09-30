@@ -5,24 +5,23 @@
                 <img class="img-fluid" src="../assets/dashboard-welcome.png"/>
             </div>
             <div class="col-sm">
-                <div class="row border align-self-center">
-                    <div class="text-center fs-3">Hello, dddddd</div>
-                    <div class="text-center fs-4">user information:</div>
-                    <div class="text-center fs-4">User name: </div>
-                    <div class="text-center fs-4">Login time: </div>
+                <div class="row border align-self-center py-3">
+                    <div class="text-center fs-3">Hello, challenger</div>
+                    <div class="text-center fs-4">{{user}}</div>
+                    <div class="text-center fs-6">Now we are at: {{date}}</div>
                 </div>
                 <div class="row mt-5">
-                    <table class="table fs-4 text-center table-bordered border-white table-color">
+                    <table class="table fs-5 text-center table-bordered border-white table-color">
                         <tr>
-                            <td class="dashboard-btn py-4">Publish Program</td>
-                            <td class="dashboard-btn py-4">Manage Program</td>
+                            <td class="dashboard-btn py-2"><button class="table-color" @click="clickCreateProject" style="width:100%;">Program Publish</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Program Manage</button></td>
                         </tr>
                         <tr>
-                            <td class="dashboard-btn py-4">Manage Experience</td>
-                            <td class="dashboard-btn py-4">Config Account</td>
+                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Experience Manage</button></td>
+                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Account Setting</button></td>
                         </tr>
                         <tr>
-                            <td class="dashboard-btn py-4">Share new Experience</td>
+                            <td class="dashboard-btn py-2"><button class="table-color" style="width:100%;">Experience Share</button></td>
                             <td></td>
                         </tr>
                     </table>
@@ -46,3 +45,25 @@
     color: white;
 }
 </style>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { mapGetters } from 'vuex'
+import RouteTo from '../mixins/RouteTo'
+
+
+export default defineComponent({
+    data(){
+        return {
+            date: Date()
+        }
+    },
+    mixins: [RouteTo],
+    computed: {
+        ...mapGetters({
+            authenticated: 'auth/authenticated',
+            user: 'auth/user'
+        })
+    }
+})
+</script>

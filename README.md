@@ -4,7 +4,7 @@
 <br />
 (full stack project, backend developed with java-spring)
 <br />
-If you want to login into the system, you can either sign up your own account, or with my test account: {email: beierhao@hotmail.com, password: password}
+If you want to login into the system, you can either sign up your own account, or with my test account: {email: beierhao@hotmail.com, password: password}, password is encoded saved in mongodb means no one can see your password.
 
 For testing, 
 1. login first, then click Username-Button top-right, choose program and create a program. 
