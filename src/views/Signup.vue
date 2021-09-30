@@ -4,7 +4,6 @@
             <div class="col-sm-12 text-center">
                 <img src="../assets/logo.png" alt="Peredu-Logo" class="mt-1 img-fluid" width="500"/>
                 <h2>A platform for educational projects in all fields</h2>
-                <h3>{{msg}}</h3>
             </div>
         </div>
         <div class="row">
@@ -45,7 +44,6 @@ export default defineComponent({
     },
     data() {
         return{
-            msg:"",
             email: "",
             password: "",
             signupResult:""
@@ -73,19 +71,7 @@ export default defineComponent({
                 }
             });
         },
-   },
-    mounted() {
-    axios
-    .get('/api/auth/test')
-    .then(response => {
-        this.msg = response.data
-    })
-    // .catch(error => {
-    //     console.log(error)
-    //     this.errored = true
-    // })
-    // .finally(() => this.loading = false)
-    }
+   }
 })
 
 </script>

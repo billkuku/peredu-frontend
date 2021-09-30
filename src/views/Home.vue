@@ -29,19 +29,13 @@
       <div class="mt-3"><button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program</button></div>
     </div>
   </div>
-
-  <!-- <div class="row mt-3 d-flex justify-content-around"> 
-
-    <button @click="clickCreateExperience" type="button" class="btn-lg btn-first" style="width: 220px;">Share Experience<br> (as student)</button> 
-
-    <button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program<br> (as school)</button>
-        
-  </div> -->
+  <p class="text-center">{{msg}}/backend-server</p>
 </div>
 </template>
 
 <script lang="ts">
 
+import axios from 'axios';
 import { defineComponent } from 'vue';
 import { mapGetters } from 'vuex';
 import RouteTo from '../mixins/RouteTo'
@@ -49,12 +43,24 @@ import RouteTo from '../mixins/RouteTo'
 export default defineComponent({
   name: "usage",
   mixins: [RouteTo],
+  data(){
+    return {
+      msg:""
+    }
+  },
   computed: {
     ...mapGetters({
         authenticated: 'auth/authenticated',
         user: 'auth/user'
       })
     },
+    mounted() {
+      axios
+      .get('/api/auth/test')
+      .then(response => {
+          this.msg = response.data
+      })
+    }
 })
 
 </script>

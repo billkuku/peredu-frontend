@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-sm-12 text-center">
         <img src="../assets/logo.png" alt="Peredu-Logo" class="mt-3 img-fluid" width="500">
-        <h2>A platform for education!</h2>
+        <h3>A platform for education!</h3>
       </div>
     </div>
     <div>
-      <div class="col-sm-5 mt-5 center">
+      <div class="col-sm-5 mt-3 center">
         <form @submit.prevent="onClickLogin">
               <div class="row">
                 <div class="text-center">
@@ -21,7 +21,6 @@
                   <input type="password" v-model="form.password" class="col-sm-5 mx-4 login-form-control" id="inputPassword">
                 </div>
               </div>
-            
             <button type="submit" class="btn btn-outline-dark mt-3">Login</button>
         </form>
       </div>
@@ -33,8 +32,6 @@
 import { defineComponent } from "vue";
 import axios from 'axios';
 import {mapActions} from 'vuex';
-
-
 
 export default defineComponent({
   name: 'Login',
