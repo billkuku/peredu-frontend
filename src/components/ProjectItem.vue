@@ -12,7 +12,7 @@
     <h4>{{this.currentProject.providerName}}</h4><br>
     <h6>{{this.currentProject.discription}}</h6>
     <div class="mt-5">
-        <h6 class="fs-5 font-title1">Included courses:</h6>
+        <h6 class="fs-6 font-title1">Included courses:</h6>
         <ul class="">
             <div v-for="(course, index) in currentProject.courses"
                 v-bind:key="index"
@@ -20,7 +20,7 @@
                 <div class="accordion" id="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" v-bind:id="'heading-'+index">
-                        <button class="fs-5 accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse-'+index" aria-expanded="true" v-bind:aria-controls="'collapse-'+index">
+                        <button class="fs-6 accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse-'+index" aria-expanded="true" v-bind:aria-controls="'collapse-'+index">
                             {{course.courseName}}
                         </button>
                         </h2>
@@ -35,12 +35,13 @@
             </div>
         </ul>   
     </div>
-    <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="tooltip" data-bs-placement="top" title="apply for the project" disabled>
+    <button type="button" class="btn btn-secondary mt-2" @click="applyProgram" data-bs-toggle="tooltip" data-bs-placement="top" title="apply for the project" disabled>
         Apply (in developing)
     </button>
 </template>
 
 <script lang="ts">
+import axios from 'axios'
 import {defineComponent} from 'vue'
 
 export default defineComponent({
@@ -53,6 +54,17 @@ export default defineComponent({
                 projectName: this.currentProject.projectName, 
                 projectId:this.currentProject.id, 
                 providerName:this.currentProject.providerName}})
+        },
+        applyProgram(){
+            axios({
+                method: "post",
+                url: '/api/projects/apply',
+                params: {
+                    projectId:this.currentProject.id,
+                }
+            }).then(response => {
+                alert(response.data)
+                })
         }
     }
 })

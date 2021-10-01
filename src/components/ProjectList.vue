@@ -1,4 +1,8 @@
 <template>
+<div>
+  <div class="text-end">
+    <router-link to="/projects/edit" class="btn btn-outline-dark my-1">Create a Program</router-link>
+  </div>
   <div class="table-responsive">
     <table class="table table-hover table-sm table-responsive">
       <thead class="thead-dark">
@@ -33,7 +37,7 @@
       </div>
     </div>
   </div>
-  <router-link to="/projects/edit" class="btn btn-outline-dark mt-2">Create a Program</router-link>
+</div>
 </template>
 
 <script lang="ts">
