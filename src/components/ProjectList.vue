@@ -7,6 +7,7 @@
           <th scope="col-sm-auto">discription</th>
           <th scope="col">edit</th>
           <th scope="col">archive</th>
+          <th scope="col">delete</th>
           </tr>
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
               <font-awesome-icon icon="archive" size="1x" class="fa-color"/>
             </router-link>
           </td>
+          <td><font-awesome-icon type=button @click="onClickDeleteProject(project.id)" icon="trash-alt" size="1x" class="fa-color"/></td>
         </tr>
       </tbody>
     </table>
@@ -68,6 +70,17 @@ export default defineComponent({
         url: '/api/projects/list',
         data: {
             id: projectId,
+        }
+      }).then(response => {
+          alert(response.data)
+        })
+    },
+    onClickDeleteProject(projectId:string) {
+      axios({
+        method: "post",
+        url: '/api/projects/delete',
+        params: {
+            projectId,
         }
       }).then(response => {
           alert(response.data)

@@ -4,6 +4,14 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="nav mb-3">
+                    <div v-if="loadStatus===false">
+                        <div class="fs-3">
+                            Loading
+                            <div class="spinner-border text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
                     <li class="w-100" v-for="(project, index) in currentProjects" :key="index">
                         <searchresult-bubble 
                             style="height: 150px; overflow: hidden" 
@@ -55,7 +63,8 @@ export default defineComponent({
             page: 1,
             projects:"",
             currentProjects:"",
-            currentProject: {}
+            currentProject: {},
+            loadStatus: false
         }
     },
     methods:{
@@ -77,8 +86,9 @@ export default defineComponent({
             })
             .then(response => {
                 this.projects = response.data,
-                this.currentProjects = this.projects.slice((this.page-1)*8, 8+(this.page-1)*8)
-                this.currentProject = this.currentProjects[0]
+                this.currentProjects = this.projects.slice((this.page-1)*8, 8+(this.page-1)*8),
+                this.currentProject = this.currentProjects[0],
+                this.loadStatus = true
             })
         }
     },
