@@ -12,7 +12,7 @@
     <h4>{{this.currentProject.providerName}}</h4><br>
     <h6>{{this.currentProject.discription}}</h6>
     <div class="mt-5">
-        <h6 class="fs-4 font-title1">Courses of the program:</h6>
+        <h6 class="fs-5 font-title1">Included courses:</h6>
         <ul class="">
             <div v-for="(course, index) in currentProject.courses"
                 v-bind:key="index"
@@ -20,12 +20,12 @@
                 <div class="accordion" id="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" v-bind:id="'heading-'+index">
-                        <button class="fs-4 accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse-'+index" aria-expanded="true" v-bind:aria-controls="'collapse-'+index">
+                        <button class="fs-5 accordion-button collapsed" type="button" data-bs-toggle="collapse" v-bind:data-bs-target="'#collapse-'+index" aria-expanded="true" v-bind:aria-controls="'collapse-'+index">
                             {{course.courseName}}
                         </button>
                         </h2>
                         <div v-bind:id="'collapse-'+index" class="accordion-collapse collapse" v-bind:aria-labelledby="'heading-'+index" data-bs-parent="#accordion">
-                            <div class="accordion-body">
+                            <div class="accordion-body fs-6">
                                 {{course.discription}}
                             </div>
                         </div>

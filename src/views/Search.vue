@@ -64,7 +64,7 @@ export default defineComponent({
             projects:"",
             currentProjects:"",
             currentProject: {},
-            loadStatus: false
+            loadStatus: true
         }
     },
     methods:{
@@ -76,6 +76,7 @@ export default defineComponent({
             this.currentProject = project
         },
         getSearchResult(){
+            this.loadStatus=false,
             this.page=1,
             axios({
                 method: "post",
