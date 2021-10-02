@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="row mt-3">
-            <div class="col-sm border">
+            <div class="col-sm">
                 <img class="img-fluid" src="../assets/dashboard-welcome.png"/>
             </div>
             <div class="col-sm">
-                <div class="row border align-self-center py-3">
+                <div class="row align-self-center py-3">
                     <div class="text-center fs-3">Hello, challenger</div>
                     <div class="text-center fs-4">{{user}}</div>
                     <div class="text-center fs-6">Now we are at: {{date}}</div>

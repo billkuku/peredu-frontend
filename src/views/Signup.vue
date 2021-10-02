@@ -10,7 +10,7 @@
             <div class="col-sm-12 text-center">
                 <p>{{signupResult}}</p>
                 <form @submit.prevent="onClickRegist">
-                    <div class="col-lg-5 center border">
+                    <div class="col-lg-5 center">
                         <div class="">
                             <label for="inputEmail" class="col-md-3 mx-4 my-2 text-start">Email</label>
                             <input type="email" v-model="email" class="mx-4" style="width:200px;" id="inputEmail">
@@ -19,10 +19,10 @@
                             <label for="inputPassword" class="col-md-3 mx-4 my-2 text-start">Password</label>
                             <input type="password" v-model="password" class="mx-4" style="width:200px;" id="inputPassword">
                         </div>
-                        <div class="">
+                        <!-- <div class="">
                             <label for="repeatPassword" class="col-md-3 mx-4 my-2 text-start">Rep. Password</label>
                             <input type="password" class="mx-4" style="width:200px;" id="repeatPassword">
-                        </div>
+                        </div> -->
                     </div>
                     <button type="submit" class="btn btn-outline-dark mt-3">Regist</button>
                 </form>
