@@ -158,6 +158,10 @@ export default defineComponent({
             this.user = response.data,
             console.log(response.data)
             })
+    },
+    beforeRouteLeave(){
+        this.currentPassword="",
+        this.newPassword=""
     }
 
 })

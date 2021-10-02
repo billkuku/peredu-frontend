@@ -12,10 +12,21 @@ import StarRating from 'vue-star-rating';
 // import { DatePicker } from "ant-design-vue";
 // import "ant-design-vue/dist/antd.css"
 import axios from 'axios'
+import {
+    // create naive ui
+    create,
+    // component
+    NButton, NDatePicker, NSpace
+  } from 'naive-ui'
+  
 
 require('@/store/subscriber')
 
-axios.defaults.baseURL = 'https://peredu-backend.herokuapp.com'
+// axios.defaults.baseURL = 'https://peredu-backend.herokuapp.com'
+
+const naive = create({
+    components: [NButton, NDatePicker, NSpace]
+  })
 
 library.add(faUserSecret, faArchive, faInbox, faEdit, faStar, faTrashAlt, faStarHalfAlt, faShareSquare, faUserGraduate, faSchool)
 
@@ -23,8 +34,8 @@ store.dispatch('auth/attempt', localStorage.getItem('token'))
 
 createApp(App)
 .use(store)
-// .use(DatePicker)
 .use(router)
+.use(naive)
 .component("StarRating", StarRating)
 .component("font-awesome-icon", FontAwesomeIcon)
 .mount('#app')

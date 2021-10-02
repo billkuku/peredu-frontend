@@ -3,36 +3,49 @@
         <form @submit.prevent="onClickSubmitProject">
             <div class="row">
                 <div class="col-sm-5">
-                    <div class="mb-1">
-                        <label>Program name:</label> 
+                    <div class="my-1">
+                        <label class="fs-5">Program name:</label> 
                         <input type="text"
-                            maxlength="80" 
+                            maxlength="80"
+                            class="form-control form-control-sm"
                             style="min-width: 100%"
                             v-model="project.projectName">
                     </div>
-                    <div>
-                        <label for="keyword" class="">Fields/Keywords:</label>
-                        <div class="controls">
-                        <input type="text" placeholder="single word recommended" 
-                            v-model="newKeyword" 
-                            @keyup.enter="addTodo(newKeyword, project.keywords)" 
-                            autofocus>
-                        <span class="btn-sm btn-secondary ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
-                        <span class="btn-sm btn-secondary ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
-                        </div>
-                        <ul class="mt-2">
+                    <div class="border-top my-3">
+                        <label class="fs-5">Fields/Keywords:</label>
+                        <ul class="mt-1">
                             <todo-item v-for="(keyword, index) in project.keywords"
                                 v-bind:key="keyword.index"
                                 v-bind:value="keyword"
                                 v-on:delete="deleteTodo(project.keywords, index)">
                             </todo-item>
                         </ul>
+                        <div class="controls">
+                            <input type="text" placeholder="Add keywords help student find program, maximum three words" 
+                                class="form-control form-control-sm mb-2"
+                                maxlength="40"
+                                style="min-width: 50%"
+                                v-model="newKeyword" 
+                                @keyup.enter="addTodo(newKeyword, project.keywords)" 
+                                autofocus>
+                            <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
+                            <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
+                        </div>
                     </div>
-                    <div>
-
+                </div>
+                <div class="col-sm">
+                    <div class="ps-4">
+                        <div class="">Courses:</div>
+                        <ul class="mt-1">
+                            <todo-item v-for="(course, index) in project.courses"
+                                v-bind:key="course.index"
+                                v-bind:value="course.courseName"
+                                v-on:delete="deleteTodo(project.courses, index)">
+                            </todo-item>
+                        </ul>
                         <!-- button for modal -->
-                        <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Click add and edit course included in the program</button>
-                        <p class="fs-6 text-muted">currently course can't be modified after added, but you can delete and add again.</p>
+                        <span type="button" class="btn-sm btn-first ms-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add course</span>
+                        <p class="fs-6 text-muted">Add courses included in the program, currently course can't be modified after added, but you can delete and add again.</p>
                         <!-- Modal -->
                         <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
                             <div class="modal-dialog">
@@ -48,11 +61,11 @@
                                             class="form-control" id="inputCourseName" aria-describedby="courseName" 
                                             placeholder="Enter name">
                                         <label for="inputCourseDiscription">course discription</label> 
-                                        <textarea 
+                                        <pre><textarea 
                                             class="form-control" id="inputCourseDiscription" 
                                             rows="3"
                                             v-model="newCourse.discription">
-                                        </textarea>
+                                        </textarea></pre>
                                         <small id="courseNameHelp" class="form-text text-muted"></small>
                                     </div>
                                     <div class="modal-footer">
@@ -62,26 +75,21 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="mt-2">
-                            <todo-item v-for="(course, index) in project.courses"
-                                v-bind:key="course.index"
-                                v-bind:value="course.courseName"
-                                v-on:delete="deleteTodo(project.courses, index)">
-                            </todo-item>
-                        </ul>
+
                     </div>
                 </div>
-                <div class="col-sm">
+                <!-- <div class="col-sm">
                     <div class="background-project font-title2 fs-3 text-center py-5">
                         <p>Tell Student</p>
                         <p>what and how you teach</p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="pt-2 border-top">
                     <label for="discription">Discription</label> 
                     <pre><textarea name="discription"
+                        class="form-control"
                         style='min-width: 100%'
                         rows=7  
                         placeholder="" 
@@ -95,7 +103,7 @@
             <div class="row">
                 <div>
                     <input type="checkbox" name="enabled" id="checkbox" v-model="project.enabled">
-                    <label for="enabled" class="ms-2">click to activate program, Anyone can see the program after you activate it.</label>
+                    <label for="enabled" class="ms-2 fs-6">click to activate program, Anyone can apply for the program after you activate it.</label>
                 </div>
             </div>
             <div class="row my-3">

@@ -1,5 +1,5 @@
 <template>
-    <p class="btn btn-sm todo-item m-1"
+    <p class="btn btn-sm todo-item mx-1"
         v-on:click="$emit('delete')">{{this.value}} x
     </p>
 </template>
@@ -17,5 +17,6 @@ export default defineComponent({
 .todo-item{
     list-style: none;
     background-color: #9BAF5D;
+    color:white;
 }
 </style>

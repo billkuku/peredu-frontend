@@ -47,23 +47,25 @@
                         placeholder="" 
                         maxlength="550"
                         v-model="rating.discription"
-                        class="pe-1 rounded border-success">
+                        class="form-control">
                     </textarea>
                 </div>
             </div>
         </div>
         <!-- add criteria button and input -->
-        <div class="input-group mt-5 ms-3">
-            <input class="col-sm-2 border-success"  
-                @keyup.enter="onClickAddCriteria" 
-                type="text" 
-                v-model="newCriteria" 
-                placeholder="input new criteria">
-            <div class="input-group-append">
-                <button class="btn btn-secondary"
+        <div class="row mt-5 mb-2">
+            <div class="col-sm-2">
+                <input class="form-control"  
+                    @keyup.enter="onClickAddCriteria" 
+                    type="text" 
+                    v-model="newCriteria" 
+                    placeholder="input new criteria">
+            </div>
+            <div class="col-sm-1 text-center my-1">
+                <p class="btn-sm btn-first"
                     @click="onClickAddCriteria" 
                     type="button">create
-                </button>
+                </p>
             </div>
         </div>  
 

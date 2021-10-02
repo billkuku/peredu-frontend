@@ -40,15 +40,15 @@ export default defineComponent({
 .border-first {
   border: solid;
   border-color: lightgray;
+  border-radius: 10px;
 }
 .btn-first{
   color: white;
   background-color: #547560; 
 }
 .btn-first:hover {
-  color: #547560;
-  background-color: white;
-  border-color: #547560;
+  color: black;
+  background-color: lightgray;
 }
 .font-logo {
   font-family: "Times New Roman",Georgia,Serif;
