@@ -14,6 +14,7 @@
                 <th scope="col">Rating</th>
                 <th scope="col">Status</th>
                 <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -35,6 +36,7 @@
                     <font-awesome-icon icon="edit" size="1x" class="fa-color"/>
                   </router-link>
                 </td>
+                <td><font-awesome-icon type=button @click="onClickDeleteExperience(experience.id)" icon="trash-alt" size="1x" class="fa-color"/></td>
               </tr>
             </tbody>
           </table>
@@ -80,7 +82,17 @@ export default defineComponent({
     this.experiences = ""
   },
   methods: {
-
+    onClickDeleteExperience(experienceId:string) {
+      axios({
+        method: "post",
+        url: '/api/experiences/list/delete',
+        params: {
+            experienceId,
+        }
+      }).then(response => {
+          alert(response.data)
+        })
+    }
   }
 })
 </script>

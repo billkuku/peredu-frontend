@@ -11,7 +11,7 @@
                             style="min-width: 100%"
                             v-model="project.projectName">
                     </div>
-                    <div class="border-top my-5">
+                    <div class="border-top my-4 pt-3">
                         <label class="fs-5">Fields/Keywords:</label>
                         <ul class="mt-1">
                             <todo-item v-for="(keyword, index) in project.keywords"
