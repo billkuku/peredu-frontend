@@ -7,7 +7,7 @@
             <form @submit.prevent="onClickSubmitSearch" class="row gx-1 py-5 text-center justify-content-center">
                 <div class="col-sm-6 mx-5">
                     <label for="validationDefault01" class="form-label fs-6">Find a Program/Supplier</label>
-                    <input type="text" class="form-control" placeholder='Enter school or program name'
+                    <input type="text" class="form-control col-sm-6" placeholder='Enter school or program name'
                         v-model="searchKeywords"
                         required>
                 </div>

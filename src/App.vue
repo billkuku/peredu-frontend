@@ -5,7 +5,8 @@
         <search-bar></search-bar>
       </div>
       <div v-if="$route.path==='/home'">
-        <searchbar-home></searchbar-home>
+        <searchbar-home v-if="windowInnerWidth>500"></searchbar-home>
+        <search-bar v-else></search-bar>
       </div>
       <router-view/>
       <!-- <global-bottom></global-bottom> -->
@@ -29,7 +30,7 @@ export default defineComponent({
   },
   data () {
     return {
-      //
+      windowInnerWidth: window.innerWidth,
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <div class="min-vh-10 slogan py-5 fs-3 text-center nav flex-column justify-content-center experience-background" style="position:relative; top:-40px;">
+    <div v-if="windowInnerWidth>500" class="min-vh-10 slogan py-5 fs-3 text-center nav flex-column justify-content-center experience-background" style="position:relative; top:-40px;">
         <div class="pt-2 pb-1">No Criteria you want?</div>
         <div class="pb-0">Create one yourself.</div>
     </div>
@@ -103,7 +103,8 @@ export default defineComponent({
                 rating: [{}],
                 totalRating:""
             },
-            newCriteria:""
+            newCriteria:"",
+            windowInnerWidth: window.innerWidth
         }
     },
     methods: {
