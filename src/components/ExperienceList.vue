@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row text-center">
-      <div v-if="windowInnerWidth>1200" class="col-sm-5 me-5">
+      <div v-if="windowInnerWidth>1200" class="col-sm-4 me-5">
         <img class="img-fluid" src="../assets/experience-list.png">
       </div>
       <div class="col-sm-auto">
@@ -67,16 +67,11 @@ export default defineComponent({
     return {
        experiences:"",
        windowInnerWidth: window.innerWidth,
-       loadStatus: false
+       loadStatus: true
     }
   },
   activated() {
-    axios
-    .get('/api/experiences/list')
-    .then(response => {
-        this.experiences = response.data,
-        this.loadStatus = true
-    })
+    this.getExperiences()
   },
   beforeRouteLeave(){
     this.experiences = ""
@@ -90,8 +85,18 @@ export default defineComponent({
             experienceId,
         }
       }).then(response => {
-          alert(response.data)
+          alert(response.data),
+          this.getExperiences()
         })
+    },
+    getExperiences() {
+      this.loadStatus = false
+      axios
+      .get('/api/experiences/list')
+      .then(response => {
+          this.experiences = response.data,
+          this.loadStatus = true
+      })
     }
   }
 })
