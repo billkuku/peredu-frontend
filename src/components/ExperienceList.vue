@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row text-center">
-      <div v-if="windowInnerWidth>1200" class="col-sm-4 me-5">
+      <div v-if="windowInnerWidth>1200" class="col-sm-4 pe-5">
         <img class="img-fluid" src="../assets/experience-list.png">
       </div>
-      <div class="col-sm-auto">
+      <div class="col-sm-8">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead class="thead-dark">
