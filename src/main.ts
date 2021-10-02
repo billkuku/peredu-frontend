@@ -22,7 +22,7 @@ import {
 
 require('@/store/subscriber')
 
-// axios.defaults.baseURL = 'https://peredu-backend.herokuapp.com'
+axios.defaults.baseURL = 'https://peredu-backend.herokuapp.com'
 
 const naive = create({
     components: [NButton, NDatePicker, NSpace]
