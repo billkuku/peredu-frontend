@@ -14,9 +14,9 @@
           <h4>What you can expected from us?</h4>
           Anything could be down by an online education plattform,
           to help people get better and more appropriate educational resources at every stage.
-          <br><br><h4>What is our vision</h4>
+          <br><br><h4>What is our vision?</h4>
           We want education to let you find your own value at every stage and help you reach your own goal.
-          <br><br><h4>What we are doing now</h4>
+          <br><br><h4>What we are doing now?</h4>
           We are building the infrastructure of this plattform.
           Specifically, we are designing course application.
         </div>

@@ -1,5 +1,5 @@
 <template>
-    <p class="btn btn-sm todo-item mx-1"
+    <p class="btn btn-sm todo-item me-1"
         v-on:click="$emit('delete')">{{this.value}} x
     </p>
 </template>

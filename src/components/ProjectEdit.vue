@@ -14,13 +14,14 @@
                     <div class="border-top my-4 pt-3">
                         <label class="fs-5">Fields/Keywords:</label>
                         <ul class="mt-1">
-                            <todo-item v-for="(keyword, index) in project.keywords"
+                            <todo-item 
+                                v-for="(keyword, index) in project.keywords"
                                 v-bind:key="keyword.index"
                                 v-bind:value="keyword"
                                 v-on:delete="deleteTodo(project.keywords, index)">
                             </todo-item>
                         </ul>
-                        <div class="controls">
+                        <div class="controls pb-4 border-bottom">
                             <input type="text" placeholder="Add keywords help student find program, maximum three words" 
                                 class="form-control form-control-sm mb-2"
                                 maxlength="40"
@@ -28,23 +29,30 @@
                                 v-model="newKeyword" 
                                 @keyup.enter="addTodo(newKeyword, project.keywords)" 
                                 autofocus>
-                            <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
-                            <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
+                            <div class="text-end">
+                                <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
+                                <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="ps-4">
-                        <div class="">Courses:</div>
+                        <div class="">Courses:
+                            <span class="text-end">
+                                <span type="button" class="btn-sm btn-first ms-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add course</span>
+                            </span>
+                        </div>
                         <ul class="mt-1">
-                            <todo-item v-for="(course, index) in project.courses"
+                            <todo-item 
+                                v-for="(course, index) in project.courses"
                                 v-bind:key="course.index"
                                 v-bind:value="course.courseName"
                                 v-on:delete="deleteTodo(project.courses, index)">
                             </todo-item>
                         </ul>
                         <!-- button for modal -->
-                        <span type="button" class="btn-sm btn-first ms-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add course</span>
+
                         <p class="fs-6 text-muted">Add courses included in the program, currently course can't be modified after added, but you can delete and add again.</p>
                         <!-- Modal -->
                         <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
@@ -86,7 +94,7 @@
                 </div> -->
             </div>
             <div class="row">
-                <div class="pt-2 border-top">
+                <div class="">
                     <label for="discription">Discription</label> 
                     <pre><textarea name="discription"
                         class="form-control"
