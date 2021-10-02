@@ -16,7 +16,7 @@ export default defineComponent({
 <style>
 .todo-item{
     list-style: none;
-    background-color: #9BAF5D;
+    background-color: #96B4A1;
     color:white;
 }
 </style>
