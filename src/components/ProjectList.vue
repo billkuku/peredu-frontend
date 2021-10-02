@@ -57,12 +57,7 @@ export default defineComponent({
     }
   },
   activated() {
-    axios
-    .get('/api/projects/list')
-    .then(response => {
-        this.projects = response.data,
-        this.loadStatus = true
-    })
+    this.getProjects()
   },
   beforeRouteLeave(){
     this.projects = ""
@@ -87,8 +82,17 @@ export default defineComponent({
             projectId,
         }
       }).then(response => {
-          alert(response.data)
+          alert(response.data),
+          this.getProjects()
         })
+    },
+    getProjects() {
+      axios
+      .get('/api/projects/list')
+      .then(response => {
+          this.projects = response.data,
+          this.loadStatus = true
+      })
     }
   }
 })
