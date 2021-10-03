@@ -107,7 +107,7 @@
                         v-model="project.discription"
                         required>
                     </textarea></pre>
-                    <!-- <p class="text-end">{{ remaincharactersText }}</p> -->
+                    <p class="text-end">{{ remaincharactersText }}</p>
                 </div>
             </div>
             <div class="row">

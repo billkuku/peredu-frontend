@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <!-- add criteria button and input -->
+        <!-- add criteria -->
         <div class="row mt-5 mb-2">
             <div class="col-sm-2">
                 <input class="form-control"  
