@@ -9,7 +9,7 @@
                             maxlength="80"
                             class="form-control form-control-sm"
                             style="min-width: 100%"
-                            v-model="project.projectName">
+                            v-model="project.projectName" required>
                     </div>
                     <div class="border-top my-4 pt-3">
                         <label class="fs-5">Fields/Keywords:</label>
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <label for="inputCourseName">course name</label>
-                                        <input type="courseName" 
+                                        <input type="text"
                                             v-model="newCourse.courseName" 
                                             class="form-control" id="inputCourseName" aria-describedby="courseName" 
                                             placeholder="Enter name">
@@ -72,7 +72,8 @@
                                         <pre><textarea 
                                             class="form-control" id="inputCourseDiscription" 
                                             rows="3"
-                                            v-model="newCourse.discription">
+                                            v-model="newCourse.discription"
+                                            >
                                         </textarea></pre>
                                         <small id="courseNameHelp" class="form-text text-muted"></small>
                                     </div>
@@ -103,7 +104,8 @@
                         placeholder="" 
                         @keyup='charCount(project.discription, 550)'
                         maxlength="550"
-                        v-model="project.discription">
+                        v-model="project.discription"
+                        required>
                     </textarea></pre>
                     <!-- <p class="text-end">{{ remaincharactersText }}</p> -->
                 </div>

@@ -13,11 +13,11 @@
                     <div class="col-lg-5 center">
                         <div class="">
                             <label for="inputEmail" class="col-md-3 mx-4 my-2 text-start">Email</label>
-                            <input type="email" v-model="email" class="mx-4" style="width:200px;" id="inputEmail">
+                            <input type="email" v-model="email" class="mx-4" style="width:200px;" id="inputEmail" required>
                         </div>
                         <div class="">
                             <label for="inputPassword" class="col-md-3 mx-4 my-2 text-start">Password</label>
-                            <input type="password" v-model="password" class="mx-4" style="width:200px;" id="inputPassword">
+                            <input type="password" v-model="password" class="mx-4" style="width:200px;" id="inputPassword" required>
                         </div>
                         <!-- <div class="">
                             <label for="repeatPassword" class="col-md-3 mx-4 my-2 text-start">Rep. Password</label>

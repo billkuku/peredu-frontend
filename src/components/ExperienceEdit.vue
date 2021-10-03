@@ -47,7 +47,7 @@
                         placeholder="" 
                         maxlength="550"
                         v-model="rating.discription"
-                        class="form-control">
+                        class="form-control" required>
                     </textarea>
                 </div>
             </div>
