@@ -13,15 +13,7 @@
                     </div>
                     <div class="border-top my-4 pt-3">
                         <label class="fs-5">Fields/Keywords:</label>
-                        <ul class="mt-1">
-                            <todo-item 
-                                v-for="(keyword, index) in project.keywords"
-                                v-bind:key="keyword.index"
-                                v-bind:value="keyword"
-                                v-on:delete="deleteTodo(project.keywords, index)">
-                            </todo-item>
-                        </ul>
-                        <div class="controls pb-4 border-bottom">
+                        <div class="controls border-bottom">
                             <input type="text" placeholder="Add keywords help student find program, maximum three words" 
                                 class="form-control form-control-sm mb-2"
                                 maxlength="40"
@@ -33,6 +25,14 @@
                                 <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
                                 <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
                             </div>
+                            <ul class="mt-1">
+                                <todo-item 
+                                    v-for="(keyword, index) in project.keywords"
+                                    v-bind:key="keyword.index"
+                                    v-bind:value="keyword"
+                                    v-on:delete="deleteTodo(project.keywords, index)">
+                                </todo-item>
+                            </ul>                            
                         </div>
                     </div>
                 </div>
