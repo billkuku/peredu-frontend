@@ -16,6 +16,9 @@
         <li class="nav-item">
           <router-link to="/about" class="nav-link text-dark fs-6">About</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/test" class="nav-link text-dark fs-6">Test</router-link>
+        </li>
         <li class="nav-item" v-if="user!==null">
           <div type=button @click="clickToDashboard" class="nav-link text-dark fs-6">Dashboard</div>
         </li>

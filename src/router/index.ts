@@ -4,6 +4,11 @@ import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/test',
+    name: 'Test',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Test.vue'),
+  },
+  {
     path: '/home',
     name: 'Home',
     // component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
