@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import store from '@/store'
-import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,10 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'Home',
-    // component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
-    components: {
-      default: Home,
-    }
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
   {
     path: '/',
@@ -47,6 +43,29 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Profile1',
         component: () => import(/* webpackChunkName: "account" */ '../components/AccountProfile.vue'),
         // meta: {requiresAuth: true},
+      }
+    ]
+  },
+  {
+    path: '/scho/:providername',
+    name: 'Organization',
+    redirect: '/scho/:providername/overview',
+    component: () => import(/* webpackChunkName: "organization" */ '../views/Organization.vue'),
+    children: [
+      {
+        path: '/scho/:providername/projects',
+        name: 'Organizationproject',
+        component: () => import(/* webpackChunkName: "rating" */ '../components/OrganizationProject.vue'),
+      },
+      {
+        path: '/scho/:providername/project/:id',
+        name: 'Rating',
+        component: () => import(/* webpackChunkName: "rating" */ '../components/RatingResult.vue'),
+      },
+      {
+        path: '/scho/:providername/overview',
+        name: 'Organizationoverview',
+        component: () => import(/* webpackChunkName: "organizationoverview" */ '../components/OrganizationOverview.vue'),
       }
     ]
   },

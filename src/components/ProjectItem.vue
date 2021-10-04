@@ -1,15 +1,25 @@
 <template>
     <div class="row">
-        <h2 class="col-sm-9">{{this.currentProject.projectName}}</h2>
+        <h2 class="col-sm-9">{{currentProject.projectName}}</h2>
 
         <font-awesome-icon @click="createExperience()" type="button" icon="star-half-alt" size="3x" class="col-sm-1 icon"
             data-bs-toggle="tooltip" data-bs-placement="top" title="leave a rating to the program"/>
-        
         <font-awesome-icon type="button" icon="share-square" size="3x" class="col-sm-1 icon"
             data-bs-toggle="tooltip" data-bs-placement="top" title="share the program"/>
     </div>
     
-    <h4>{{this.currentProject.providerName}}</h4><br>
+    <h4>{{currentProject.providerName}}</h4>
+    <router-link :to="`/scho/${currentProject.providerName}/project/${currentProject.id}`">
+        <star-rating
+            increment="0.1"
+            star-size=15
+            show-rating=false
+            rating=4
+            active-color="gray"
+            read-only>
+        </star-rating>
+    </router-link>
+    <br>
     <h6>{{this.currentProject.discription}}</h6>
     <div class="mt-5">
         <h6 class="fs-6 font-title1">Included courses:</h6>
@@ -41,12 +51,14 @@
 </template>
 
 <script lang="ts">
+import RouteTo from '@/mixins/RouteTo'
 import axios from 'axios'
 import {defineComponent} from 'vue'
 
 export default defineComponent({
     name: "SearchresultItem",
     props: ['currentProject'],
+    mixins: [RouteTo],
     methods: {
         createExperience() {
             this.$router.push({name:"Experiencecreate", 
