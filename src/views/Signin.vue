@@ -23,9 +23,11 @@
           </div>
           <div>
             <button type="submit" class="btn btn-outline-dark mt-3">Login</button>
-          </div>
-          <div v-if="loadStatus===true" class="spinner-border text-secondary mt-1" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <span class="text-center position-absolute ms-3" v-if="loadStatus===true">
+              <div class="spinner-border text-secondary my-3" style="width: 2rem; height: 2rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </span>
           </div>
         </form>
       </div>

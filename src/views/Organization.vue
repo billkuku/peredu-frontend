@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div>
-                    {{providerName}}
+                    <h3>{{providerName}}</h3>
                 </div>
                 <div class="">
                     <ul class="nav nav-pills">

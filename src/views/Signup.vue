@@ -25,6 +25,11 @@
                         </div> -->
                     </div>
                     <button type="submit" class="btn btn-outline-dark mt-3">Regist</button>
+                    <span class="text-center position-absolute ms-3" v-if="loadStatus===true">
+                    <div class="spinner-border text-secondary my-3" style="width: 2rem; height: 2rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    </span>
                 </form>
             </div>
         </div>
@@ -44,11 +49,13 @@ export default defineComponent({
         return{
             email: "",
             password: "",
-            signupResult:""
+            signupResult:"",
+            loadStatus: false
         }
     },
     methods: {
         onClickRegist(){
+            this.loadStatus=true,
             axios({
                 method: "post", //指定传输的方式
                 url: '/api/auth/signup',      //url
@@ -59,11 +66,14 @@ export default defineComponent({
             })
             .then(response => {
                 this.signupResult = response.data,
-                console.log(response)})
+                console.log(response),
+                this.loadStatus=false
+                })
             .catch((error) => {
                 if( error.response ){
                     this.signupResult = error.response.data,
-                    console.log(error.response.data); // => the response payload 
+                    console.log(error.response.data),
+                    this.loadStatus=false
                 }
             });
         },

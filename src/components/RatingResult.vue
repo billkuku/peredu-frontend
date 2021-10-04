@@ -1,6 +1,11 @@
 <template>
-    {{projectName}}
-    {{ratings}}
+    <div>
+        <h4 class="text-end">{{projectName}}</h4>
+        <li class="w-100 border" v-for="(ratings, index) in experiences" :key="index">
+            rating: {{ratings.totalRating}}
+            {{rating.rating[0]}}
+        </li>
+    </div>
 </template>
 
 <script lang="ts">
@@ -12,7 +17,7 @@ export default defineComponent({
     data(){
         return {
             id:this.$route.params.id,
-            ratings:[],
+            experiences:[],
             projectName: this.$route.params.projectname
         }
     },
@@ -21,7 +26,7 @@ export default defineComponent({
             method: "get",
             url: '/api/experiences/ratings/'+this.id,
         }).then(response => {
-            this.ratings=response.data
+            this.experiences=response.data
             })
     }
 })
