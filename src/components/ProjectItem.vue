@@ -10,7 +10,7 @@
     
     <h4>{{currentProject.providerName}}</h4>
     <router-link 
-        :to="{path:`/scho/${currentProject.providerName}/project/${currentProject.id}`}">
+        :to="{path:`/scho/${currentProject.providerName}/${currentProject.projectName}/${currentProject.id}`}">
         <star-rating
             increment="0.1"
             star-size=15

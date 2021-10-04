@@ -1,6 +1,6 @@
 <template>
-    12
-    {{currentProject}}
+    {{projectName}}
+    {{ratings}}
 </template>
 
 <script lang="ts">
@@ -12,13 +12,14 @@ export default defineComponent({
     data(){
         return {
             id:this.$route.params.id,
-            ratings:[]
+            ratings:[],
+            projectName: this.$route.params.projectname
         }
     },
     mounted(){
         axios({
             method: "get",
-            url: '/api/project/ratings/'+this.id,
+            url: '/api/experiences/ratings/'+this.id,
         }).then(response => {
             this.ratings=response.data
             })

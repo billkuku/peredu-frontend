@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div>
-                    organization name
+                    {{providerName}}
                 </div>
                 <div class="">
                     <ul class="nav nav-pills">
@@ -32,7 +32,11 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
     name: 'Organization',
-    props: []
+    data(){
+        return {
+            providerName: this.$route.params.providername
+        }
+    }
 
 })
 </script>

@@ -59,7 +59,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import(/* webpackChunkName: "rating" */ '../components/OrganizationProject.vue'),
       },
       {
-        path: '/scho/:providername/project/:id',
+        path: '/scho/:providername/:projectname/:id',
         name: 'Rating',
         props: true,
         component: () => import(/* webpackChunkName: "rating" */ '../components/RatingResult.vue'),
