@@ -49,6 +49,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/scho/:providername',
     name: 'Organization',
+    props: true,
     redirect: '/scho/:providername/overview',
     component: () => import(/* webpackChunkName: "organization" */ '../views/Organization.vue'),
     children: [
@@ -60,6 +61,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/scho/:providername/project/:id',
         name: 'Rating',
+        props: true,
         component: () => import(/* webpackChunkName: "rating" */ '../components/RatingResult.vue'),
       },
       {
@@ -127,7 +129,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/search',
     name: 'Search',
     props: true,
-    component: () => import('../views/Search.vue')
+    component: () => import('../views/Search.vue'),
   },
   {
     path: '/signin',

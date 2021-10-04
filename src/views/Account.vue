@@ -7,7 +7,7 @@
                     <router-link to="/account/roadmap" class="dropdown-item my-2 border-top fs-5" disabled>History</router-link>
                 </div>
             </div>
-            <div class="mt-5 ms-5 col-sm-9">
+            <div class="col-sm-9 mt-5 ms-5">
                 <router-view v-slot="{ Component }">
                     <keep-alive>
                         <component :is="Component" />
@@ -20,11 +20,9 @@
 
 <script lang="ts">
 import  { defineComponent } from 'vue'
-import EditProfile from '../components/EditProfile.vue'
 export default defineComponent({
     name: "Account",
     components: {
-        EditProfile
     }
 })
 </script>
