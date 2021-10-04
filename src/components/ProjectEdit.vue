@@ -11,7 +11,7 @@
                             style="min-width: 100%"
                             v-model="project.projectName" required>
                     </div>
-                    <div class="border-top my-4 pt-3">
+                    <div class="border-top mt-4 pt-3">
                         <label class="fs-5">Fields/Keywords:</label>
                         <div class="controls border-bottom">
                             <input type="text" placeholder="Add keywords help student find program, maximum three words" 
@@ -95,7 +95,7 @@
                 </div> -->
             </div>
             <div class="row">
-                <div class="">
+                <div class="mt-3">
                     <label for="discription">Discription</label> 
                     <pre><textarea name="discription"
                         class="form-control"
