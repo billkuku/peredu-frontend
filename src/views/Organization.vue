@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 mt-3">
                 <div>
                     <h3>{{providerName}}</h3>
                 </div>
