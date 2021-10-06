@@ -1,19 +1,19 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 border mt-3">
+            <div class="col-sm-4 mt-3">
                 Average Rating:
                 <star-rating
                     increment="0.1"
                     star-size=35
-                    rating=1
+                    v-model:rating="avgRating"
                     show-rating=false
                     read-only=true>
                 </star-rating>
             </div>
             <div class="col-sm-8">
                 <h4 class="text-end">{{projectName}}</h4>
-                <div class="w-100 border" v-for="(rating, index) in ratings" :key="index">
+                <div class="border" v-for="(rating, index) in ratings" :key="index">
                     <div>Total rating:</div>
                     <div>
                         <star-rating
@@ -43,21 +43,26 @@ export default defineComponent({
     data(){
         return {
             id:this.$route.params.id,
-            ratings:[],
+            ratings:[{totalRating:0}],
             projectName: this.$route.params.projectname,
-            avgRating: [],
-            rating:{},
-            myMap: Map
+            avgRating: 0
         }
     },
     mounted(){
         axios({
             method: "get",
             url: '/api/experiences/ratings/'+this.id,
-        }).then(response => {
-            this.ratings=response.data
             })
-
+        .then(response => {
+            this.ratings=response.data
+            var totalRatingList = this.ratings.map(e=>e.totalRating)
+            console.log('mapped element is' + totalRatingList)
+            this.avgRating = totalRatingList
+                .reduce((previousValue, currentValue )=> 
+                    (previousValue + currentValue)/totalRatingList.length
+                )
+            })
     }
+
 })
 </script>
