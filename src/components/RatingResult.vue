@@ -44,7 +44,10 @@ export default defineComponent({
         return {
             id:this.$route.params.id,
             ratings:[],
-            projectName: this.$route.params.projectname
+            projectName: this.$route.params.projectname,
+            avgRating: [],
+            rating:{},
+            myMap: Map
         }
     },
     mounted(){
@@ -54,6 +57,7 @@ export default defineComponent({
         }).then(response => {
             this.ratings=response.data
             })
+
     }
 })
 </script>
