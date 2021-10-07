@@ -2,17 +2,21 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 mt-3">
-                Average Rating:
-                <star-rating
-                    increment="0.1"
-                    star-size=35
-                    v-model:rating="avgRating"
-                    show-rating=false
-                    read-only=true>
-                </star-rating>
+                <div class="text-start align-item-center">
+                    <h4 class="" style="font-family: Consolas">{{projectName}}</h4>
+                    <h6 class="mt-5">Average Rating:</h6>
+                    <div class="px-auto border">
+                        <star-rating
+                            increment="0.1"
+                            star-size=35
+                            v-model:rating="avgRating"
+                            show-rating=false
+                            read-only=true>
+                        </star-rating>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-8">
-                <h4 class="text-end">{{projectName}}</h4>
+            <div class="col-sm-8">  
                 <div class="border" v-for="(rating, index) in ratings" :key="index">
                     <div>Total rating:</div>
                     <div>
@@ -25,8 +29,7 @@
                         </star-rating>
                     </div>
                     <div v-for="(rate, index) in rating.rating" :key="index">
-                        {{rate.criteria}}
-                        {{rate.discription}}
+                        {{rate.criteria}}{{rate.discription}}
                     </div>
                 </div>
             </div>

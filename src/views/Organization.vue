@@ -1,19 +1,19 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 mt-3">
-                <div>
-                    <h3>{{providerName}}</h3>
+            <div class="col-sm-12 mt-3 text-end">
+                <div class="">
+                    <h3 style="font-family: Consolas">{{providerName}}</h3>
                 </div>
                 <div class="">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="nav-item">
                             <router-link to="/scho/overview" class="nav-link active" aria-current="page" href="#">Overview</router-link>
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <router-link to="/scho/programs" class="nav-link" href="#">Programs</router-link>
-                        </li>
-                    </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
