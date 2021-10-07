@@ -9,7 +9,7 @@
           <table class="table table-hover">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Project</th>
+                <th scope="col">Program</th>
                 <th scope="col">Provider</th>
                 <th scope="col">Rating</th>
                 <th scope="col">Status</th>

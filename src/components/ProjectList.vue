@@ -28,12 +28,12 @@
         </tr>
       </tbody>
     </table>
-    <div v-if="loadStatus===false">
-      <div class="fs-3">
-        Loading
-        <div class="spinner-border text-secondary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
+  </div>
+  <div v-if="loadStatus===false" class="text-center">
+    <div class="fs-3">
+      Loading
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
       </div>
     </div>
   </div>

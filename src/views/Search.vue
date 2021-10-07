@@ -12,7 +12,6 @@
                             </div>
                         </div>
                     </div>
-                    {{currentProject}}{{currentProjects}}
                     <li class="w-100" v-for="(project, index) in currentProjects" :key="index">
                         <searchresult-bubble 
                             style="height: 150px; overflow: hidden" 
