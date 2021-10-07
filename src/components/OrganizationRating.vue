@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 mt-3">
-                <div class="text-start align-item-center">
+                <div class="text-start">
                     <h4 class="" style="font-family: Consolas">{{projectName}}</h4>
                     <h6 class="mt-5">Average Rating:</h6>
-                    <div class="px-auto border">
+                    <div class="">
                         <star-rating
                             increment="0.1"
                             star-size=35

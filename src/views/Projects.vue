@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-2 mt-5">
-                <n-menu :options="options" style="width: 180px;" default-value="1" />
+                <n-menu class="fs-5" :options="options" style="width: 180px;" default-value="1" />
             </div>
             <div class="col-sm mt-5">
                 <router-view v-slot="{ Component }">
@@ -28,9 +28,7 @@ export default defineComponent({
                     h(
                         RouterLink,
                         {
-                        to: {
-                            name: 'Projectlist'
-                        }
+                            to: { name: 'Projectlist' }
                         },
                         { default: () => 'MyPrograms' }
                     ),
@@ -41,9 +39,7 @@ export default defineComponent({
                     h(
                         RouterLink,
                         {
-                        to: {
-                            path: '/projects/archive'
-                        }
+                        to: { path: '/projects/archive' }
                         },
                         { default: () => 'Archive' }
                     ),
@@ -51,8 +47,7 @@ export default defineComponent({
                 }
             ]
         }
-    },
-    name: "Projects",
+    }
 })
 </script>
 

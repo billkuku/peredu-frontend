@@ -6,14 +6,7 @@
                     <h3 style="font-family: Consolas">{{providerName}}</h3>
                 </div>
                 <div class="">
-                    <nav class="navbar navbar-light bg-light">
-                        <div class="nav-item">
-                            <router-link to="/scho/overview" class="nav-link active" aria-current="page" href="#">Overview</router-link>
-                        </div>
-                        <div class="nav-item">
-                            <router-link to="/scho/programs" class="nav-link" href="#">Programs</router-link>
-                        </div>
-                    </nav>
+                    <n-menu v-model:value="activeKey" class="fs-6" mode="horizontal" :options="menuOptions" />
                 </div>
             </div>
         </div>
@@ -28,9 +21,41 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, h, ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const menuOptions = [
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {path:'/scho/overview'}
+        },
+        'Overview'
+      ),
+    key: 'overview',
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {path:'/scho/programs'}
+        },
+        'Programs'
+      ),
+    key: 'programs',
+  }
+]
 
 export default defineComponent({
+    setup () {
+        return {
+            activeKey: ref(null),
+            menuOptions
+        }
+    },
     name: 'Organization',
     data(){
         return {

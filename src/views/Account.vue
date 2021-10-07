@@ -2,10 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-2 mt-5">
-                <div class="nav nav-pills"  role="tablist">
-                    <router-link to="/account/profile" class="dropdown-item my-2 border-top fs-5">Profile</router-link>
-                    <router-link to="/account/roadmap" class="dropdown-item my-2 border-top fs-5" disabled>History</router-link>
-                </div>
+                <n-menu class="fs-5" :options="options" style="width: 180px;" default-value="1" />
             </div>
             <div class="col-sm-9 mt-5 ms-5">
                 <router-view v-slot="{ Component }">
@@ -19,8 +16,37 @@
 </template>
 
 <script lang="ts">
-import  { defineComponent } from 'vue'
+import  { defineComponent, h } from 'vue'
+import { RouterLink } from 'vue-router'
 export default defineComponent({
+    setup () {
+        return {
+            options: [
+                {
+                    label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: { path: '/account/profile' }
+                        },
+                        { default: () => 'profile' }
+                    ),
+                    key: 'profile',
+                },
+                {
+                    label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: { path: '' }
+                        },
+                        { default: () => 'placeholder' }
+                    ),
+                    key: 'in dev',
+                }
+            ]
+        }
+    },
     name: "Account",
     components: {
     }
@@ -28,12 +54,5 @@ export default defineComponent({
 </script>
 
 <style>
-.navside{
-    padding-left: 20px;
-}
 
-.ctx-edit {
-    margin-top: 50px;
-    padding-left: 150px;
-}
 </style>
