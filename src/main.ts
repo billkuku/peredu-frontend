@@ -16,7 +16,7 @@ import {
     // create naive ui
     create,
     // component
-    NButton, NDatePicker, NSpace, NCard, NCollapse, NMenu
+    NButton, NDatePicker, NSpace, NCard, NCollapse, NMenu, NEllipsis
   } from 'naive-ui'
   
 
@@ -25,7 +25,7 @@ require('@/store/subscriber')
 axios.defaults.baseURL = 'https://peredu-backend.herokuapp.com'
 
 const naive = create({
-    components: [NButton, NDatePicker, NSpace, NCard, NCollapse, NMenu]
+    components: [NButton, NDatePicker, NSpace, NCard, NCollapse, NMenu, NEllipsis]
   })
 
 library.add(faUserSecret, faArchive, faInbox, faEdit, faStar, faTrashAlt, faStarHalfAlt, faShareSquare, faUserGraduate, faSchool)
