@@ -32,7 +32,7 @@
       />
       <n-timeline-item 
       type="error" 
-      title="Switch from Spring-Security to Java-Web-Token"
+      title="Switch from Session-based-login to Java-Web-Token"
       content="It is always so difficult to overthrow oneself, but if overthrowing oneself is the truth."
       time="2018-June" 
       />
