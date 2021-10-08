@@ -14,7 +14,7 @@
       />
       <n-timeline-item
         title="Learn Spring"
-        content="If learning is a challenge, then I am so willing to accept it, and permissive learning deprives the brain of its control over the body."
+        content="Learning can deprive the brain of control over the body."
         time="2021-May"
       />
       <n-timeline-item
@@ -26,20 +26,19 @@
       <n-timeline-item
         type="info"
         title="Vue decided and learned."
-        content="I want to own the whole world, even if it’s not perfect, so let’s start with full stack.
-        BTW, Most of the framework selection recommendations are biased."
+        content="I want to own the whole world, even if it’s not perfect."
         time="2021-June"
       />
       <n-timeline-item 
       type="error" 
       title="Switch from Session-based-login to Java-Web-Token"
       content="It is always so difficult to overthrow oneself, but if overthrowing oneself is the truth."
-      time="2018-June" 
+      time="2021-June" 
       />
       <n-timeline-item
         type="success"
         title="Frontend-Prototyp Generated"
-        content="As long as I'm still thinking and working."
+        content="Start is much harder than stop, I didn't make any choice before start and I don't want to anyway."
         time="2021-Aug"
       />
       <n-timeline-item
@@ -51,7 +50,7 @@
       <n-timeline-item
         type="info"
         title="Naive UI comes up"
-        content="I'd like to sleep with my eyes open, the dark mystery attracts me."
+        content="I used to like to sleep with my eyes open, the dark mystery attracts me. Now I prefer close my eyes tightly."
         time="2021-Sep"
       />
       <n-timeline-item
