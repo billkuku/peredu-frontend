@@ -40,13 +40,16 @@
               </tr>
             </tbody>
           </table>
-          <div v-if="loadStatus===false">
+          <div v-if="loadStatus===true">
             <div class="fs-3">
               Loading
               <div class="spinner-border text-secondary" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </div>
+          </div>
+          <div v-if="experiences.length===0 && loadStatus==false" class="text-center">
+            <h4 class="text-muted">This is a quiet island.</h4>
           </div>
         </div>
       </div>
@@ -67,7 +70,7 @@ export default defineComponent({
     return {
        experiences:"",
        windowInnerWidth: window.innerWidth,
-       loadStatus: true
+       loadStatus: false
     }
   },
   activated() {
@@ -90,12 +93,12 @@ export default defineComponent({
         })
     },
     getExperiences() {
-      this.loadStatus = false
+      this.loadStatus = true
       axios
       .get('/api/experiences/list')
       .then(response => {
           this.experiences = response.data,
-          this.loadStatus = true
+          this.loadStatus = false
       })
     }
   }

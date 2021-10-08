@@ -1,14 +1,14 @@
 <template>
-<div>
+<div class="container">
   <div class="text-end">
     <router-link to="/projects/edit" class="btn btn-outline-dark my-1">Create a Program</router-link>
   </div>
   <div class="table-responsive">
-    <table class="table table-hover table-sm table-responsive">
+    <table class="table table-hover table-sm">
       <thead class="thead-dark">
           <tr>
           <th scope="col">Program</th>
-          <th scope="col-sm-auto">discription</th>
+          <th scope="col">discription</th>
           <th scope="col">edit</th>
           <th scope="col">archive</th>
           <th scope="col">delete</th>
@@ -20,22 +20,23 @@
           <td >{{ project.discription }}</td>
           <td ><router-link :to="`/projects/edit/${project.id}`"><font-awesome-icon icon="edit" size="1x" class="fa-color"/></router-link></td>
           <td>
-            <router-link @click="onClickArchive(project.id)" to="/projects/archive">
-              <font-awesome-icon icon="archive" size="1x" class="fa-color"/>
-            </router-link>
+            <font-awesome-icon type=button @click="onClickArchive(project.id)" icon="archive" size="1x" class="fa-color"/>
           </td>
           <td><font-awesome-icon type=button @click="onClickDeleteProject(project.id)" icon="trash-alt" size="1x" class="fa-color"/></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div v-if="loadStatus===false" class="text-center">
+  <div v-if="loadStatus===true" class="text-center">
     <div class="fs-3">
       Loading
       <div class="spinner-border text-secondary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
+  </div>
+  <div v-if="projects.length===0 && loadStatus==false" class="text-center">
+    <h4 class="text-muted">This is a quiet island.</h4>
   </div>
 </div>
 </template>
@@ -71,7 +72,8 @@ export default defineComponent({
             id: projectId,
         }
       }).then(response => {
-          alert(response.data)
+          alert(response.data),
+          this.getProjects()
         })
     },
     onClickDeleteProject(projectId:string) {
@@ -87,11 +89,12 @@ export default defineComponent({
         })
     },
     getProjects() {
+      this.loadStatus = true,
       axios
       .get('/api/projects/list')
       .then(response => {
           this.projects = response.data,
-          this.loadStatus = true
+          this.loadStatus = false
       })
     }
   }

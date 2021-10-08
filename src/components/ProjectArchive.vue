@@ -1,26 +1,37 @@
 <template>
+<div class="container">
     <div class="table-responsive">
         <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Project name</th>
-                <th scope="col">discription</th>
-                <th scope="col">unarchive</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="project in projects" :key="project.id">
-                <td >{{ project.projectName }}</td>
-                <td >{{ project.discription }}</td>
-                <td>
-                    <router-link @click="onClickUnarchive(project.id)" to="/projects/list">
-                        <font-awesome-icon icon="inbox" size="1x" class="fa-color"/>
-                    </router-link>
-                </td>
-            </tr>
-        </tbody>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Project name</th>
+                    <th scope="col">discription</th>
+                    <th scope="col">unarchive</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="project in projects" :key="project.id">
+                    <td >{{ project.projectName }}</td>
+                    <td >{{ project.discription }}</td>
+                    <td>
+                        <font-awesome-icon type=button @click="onClickUnarchive(project.id)" icon="inbox" size="1x" class="fa-color"/>
+                    </td>
+                </tr>
+            </tbody>
         </table>
+        <div v-if="loadStatus===true" class="text-center">
+            <div class="fs-3">
+            Loading
+            <div class="spinner-border text-secondary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            </div>
+        </div>
+        <div v-if="projects.length===0 && loadStatus==false" class="text-center">
+            <h4 class="text-muted">This is a quiet island.</h4>
+        </div>
     </div>
+</div>
 </template>
 
 
@@ -36,22 +47,18 @@ export default defineComponent({
     data() {
         return {
             projects:"",
-            projectId: ""
+            projectId: "",
+            loadStatus: false
         }
     },
     activated() {
-        axios
-        .get('/api/projects/archive')
-        .then(response => {
-            this.projects = response.data
-        })
+        this.getArchivedProjects()
     },
     beforeRouteLeave(){
         this.projects = ""
     },
     methods: {
-    onClickUnarchive (projectId:string) {
-            console.log(projectId)
+        onClickUnarchive (projectId:string) {
             axios({
                     method: "post",
                     url: '/api/projects/archive/',
@@ -59,9 +66,18 @@ export default defineComponent({
                         id: projectId
                     }
                 }).then(response => {
-                        console.log(response.data),
-                        alert(response.data)
+                        alert(response.data),
+                        this.getArchivedProjects()
                     })
+            },
+        getArchivedProjects(){
+            this.loadStatus=true,
+            axios
+            .get('/api/projects/archive')
+            .then(response => {
+                this.projects = response.data,
+                this.loadStatus=false
+            })
         }
     }
 })
