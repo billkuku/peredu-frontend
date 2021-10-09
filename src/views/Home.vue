@@ -1,12 +1,12 @@
 <template>
 <div class="container">
-  <div class="text-center home-middelword">
+  <div class="text-center slogan">
     Learn and Work start with Sharing
   </div>
   <div v-if="user===null" class="text-center mt-3">
     <button class="btn btn-outline-dark fs-4" @click="clickToSignin">Join us !</button>
   </div>
-  <div class="row d-flex justify-content-around mt-4 border-top border-3 pt-4">
+  <div class="row d-flex justify-content-around mt-4 border-top border-bottom border-3 pt-4 pb-4">
     <div class="col-sm fs-5 font-propagenda pe-5 text-end mb-4">
       <div>
         <span class="text-uppercase fs-4">
@@ -29,7 +29,21 @@
       <div class="mt-3"><button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program</button></div>
     </div>
   </div>
-  <p class="text-center">{{msg}}/backend-server</p>
+  <div class="row mt-5 font-title1-color" v-if="windowInnerWidth>600">
+    <div class="col-sm-3 text-center">
+      <img class="img-fluid" src="../assets/lecturehall.png">General Education
+    </div>
+    <div class="col-sm-3 text-center">
+      <img class="img-fluid" src="../assets/bigbook.png">Hobbies Training
+    </div>
+    <div class="col-sm-3 text-center">
+      <img class="img-fluid" src="../assets/computer.png">Online
+    </div>
+    <div class="col-sm-3 text-center">
+      <img class="img-fluid" src="../assets/imagination.png">Others
+    </div>
+  </div>
+  <p class="text-center mt-5">{{msg}}/backend-server</p>
 </div>
 </template>
 
@@ -45,7 +59,8 @@ export default defineComponent({
   mixins: [RouteTo],
   data(){
     return {
-      msg:""
+      msg:"",
+      windowInnerWidth: window.innerWidth
     }
   },
   computed: {
@@ -65,8 +80,8 @@ export default defineComponent({
 
 </script>
 
-<style>
-.home-middelword{
+<style scoped>
+.slogan{
   color: #547560;
   font-size: 25px;
   font-family: Comic Sans MS;

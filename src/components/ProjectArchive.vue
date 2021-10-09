@@ -28,7 +28,7 @@
             </div>
         </div>
         <div v-if="projects.length===0 && loadStatus==false" class="text-center">
-            <h4 class="text-muted">This is a quiet island.</h4>
+            <h4 class="text-muted">You are on a quiet island.</h4>
         </div>
     </div>
 </div>

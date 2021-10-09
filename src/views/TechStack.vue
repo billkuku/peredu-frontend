@@ -26,6 +26,9 @@
       Github & Github-Actions<br>
       Heroku<br>
   </div>
+  <div>
+    img source:https://www.freepik.com
+  </div>
 </div>
 
 </template>
