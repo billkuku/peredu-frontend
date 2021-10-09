@@ -84,15 +84,8 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <!-- <div class="col-sm">
-                    <div class="background-project font-title2 fs-3 text-center py-5">
-                        <p>Tell Student</p>
-                        <p>what and how you teach</p>
-                    </div>
-                </div> -->
             </div>
             <div class="row">
                 <div class="mt-3">
@@ -175,8 +168,7 @@ export default defineComponent({
             .then(response => {
                 alert(response.data), 
                 this.$router.replace({
-                    path: '/projects'}),
-                console.log(response.data)
+                    path: '/projects'})
                 })
         },
         getProject() {
@@ -190,10 +182,10 @@ export default defineComponent({
             }
         },
     },
-    activated: function() {
+    mounted: function() {
         this.getProject()
     },
-    beforeRouteLeave(){
+    beforeRouteLeave: function() {
         this.project = {
             id: "",
             projectName: "",
