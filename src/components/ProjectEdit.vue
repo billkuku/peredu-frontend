@@ -237,7 +237,7 @@ export default defineComponent({
             }
         },
     },
-    mounted: function() {
+    activated: function() {
         this.getProject()
     },
     beforeRouteLeave: function() {
