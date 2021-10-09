@@ -21,8 +21,8 @@
       <div>
         <span class="text-uppercase fs-4">
           <span ><font-awesome-icon icon="school" size="1x" class="fa-color"/></span>&nbsp;As school
-        </span> 
-        <br> publish your education program, help
+        </span>
+        <br>publish your education program, help
       </div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>
       <div class="fs-5 font-title1-color">- more students find suitable courses</div>

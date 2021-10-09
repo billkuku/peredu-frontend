@@ -27,7 +27,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="px-5">
-          <div class="text-center py-4 fs-6">
+          <div class="text-center py-4 fs-4" style="font-family:'Comic Sans MS';">
             Therefore, <strong style="color:#344955;">PEREDU</strong> 
             provides a platform for students and educational institutions to communicate and understand each other.
           </div>
@@ -49,11 +49,15 @@
         </div>
       </div>
     </div>
+    <div v-if="user===null" class="text-center mt-3">
+      <button class="btn btn-outline-dark fs-4" @click="clickToSignin">Join us !</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapGetters } from 'vuex';
 
 export default defineComponent({
   name: 'About',
@@ -66,7 +70,13 @@ export default defineComponent({
       errored:false,
       loading:true
     }
-  }
+  },
+  computed: {
+    ...mapGetters({
+        authenticated: 'auth/authenticated',
+        user: 'auth/user'
+      })
+    },
 
 })
 
