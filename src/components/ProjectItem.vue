@@ -15,7 +15,7 @@
             increment="0.1"
             star-size=15
             show-rating=false
-            rating=4
+            v-model:rating="avgRating"
             active-color="gray"
             read-only>
         </star-rating>
@@ -55,11 +55,17 @@
 import RouteTo from '@/mixins/RouteTo'
 import axios from 'axios'
 import {defineComponent} from 'vue'
+import AvgRating from '@/mixins/AvgRating'
 
 export default defineComponent({
     name: "SearchresultItem",
     props: ['currentProject'],
-    mixins: [RouteTo],
+    mixins: [RouteTo, AvgRating],
+    data(){
+        return {
+            avgRating:0
+        }
+    },
     methods: {
         createExperience() {
             this.$router.push({name:"Experiencecreate", 
@@ -79,6 +85,12 @@ export default defineComponent({
                 alert(response.data)
                 })
         }
+    },
+    mounted(){
+        this.avgRating = this.getAvgRating(this.currentProject.id)
+    },
+    watch:{
+        
     }
 })
 </script>

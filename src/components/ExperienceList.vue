@@ -23,6 +23,7 @@
                 <td>{{ experience.providerName }}</td>
                 <td>
                   <star-rating
+                    increment="0.1"
                     star-size="20"
                     :rating="experience.totalRating"
                     show-rating=false
