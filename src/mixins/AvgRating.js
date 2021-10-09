@@ -14,12 +14,15 @@ export default {
                 })
             .then(response => {
                 var experiences=response.data
-                var ratingList = experiences.map(e=>e.totalRating)
-                console.log('mapped element is' + ratingList)
-                this.avgRating = ratingList
-                    .reduce((previousValue, currentValue )=> 
-                        (previousValue + currentValue)/ratingList.length
-                    )
+                if(experiences.length!==0){
+                    var ratingList = experiences.map(e=>e.totalRating)
+                    this.avgRating = ratingList
+                        .reduce((previousValue, currentValue )=> 
+                            (previousValue + currentValue)/ratingList.length
+                        )
+                } else {
+                    this.avgRating = 0
+                }
             })
             return this.avgRating
         }

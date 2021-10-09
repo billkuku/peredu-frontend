@@ -90,7 +90,9 @@ export default defineComponent({
         this.avgRating = this.getAvgRating(this.currentProject.id)
     },
     watch:{
-        
+        currentProject() {
+            this.avgRating = this.getAvgRating(this.currentProject.id)
+        }
     }
 })
 </script>
