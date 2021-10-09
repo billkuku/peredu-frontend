@@ -1,19 +1,33 @@
 <template>
-    <div class="fs-5">
+    <div class="fs-6">
         <form @submit.prevent="onClickSubmitProject">
             <div class="row">
                 <div class="col-sm-5">
-                    <div class="my-1">
-                        <label class="fs-5">Program name:</label> 
+                    <div class="">
+                        <label class="">Program name<span class="text-danger">*</span>:</label> 
                         <input type="text"
                             maxlength="80"
                             class="form-control form-control-sm"
                             style="min-width: 100%"
                             v-model="project.projectName" required>
                     </div>
-                    <div class="border-top mt-4 pt-3">
-                        <label class="fs-5">Fields/Keywords:</label>
-                        <div class="controls border-bottom">
+                    <div>
+                        <label class="">Location:</label> 
+                        <input type="text"
+                            maxlength="80"
+                            class="form-control form-control-sm"
+                            style="min-width: 100%">                        
+                    </div>
+                    <div>
+                        <label class="">Website:</label> 
+                        <input type="text"
+                            maxlength="80"
+                            class="form-control form-control-sm"
+                            style="min-width: 100%">                        
+                    </div>
+                    <div class="">
+                        <label class="">Search Keywords:</label>
+                        <div class="">
                             <input type="text" placeholder="Add keywords help student find program, maximum three words" 
                                 class="form-control form-control-sm mb-2"
                                 maxlength="40"
@@ -35,11 +49,9 @@
                             </ul>                            
                         </div>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="ps-4">
-                        <div class="">Courses:
-                            <span class="text-end">
+                    <div class="mt-2">
+                        <div class="">Included Courses:
+                            <span class="d-flex justify-content-end">
                                 <span type="button" class="btn-sm btn-first ms-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add course</span>
                             </span>
                         </div>
@@ -53,7 +65,7 @@
                         </ul>
                         <!-- button for modal -->
 
-                        <p class="fs-6 text-muted">Add courses included in the program, currently course can't be modified after added, but you can delete and add again.</p>
+                        <!-- <p class="text-muted">Add courses included in the program, currently course can't be modified after added, but you can delete and add again.</p> -->
                         <!-- Modal -->
                         <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
                             <div class="modal-dialog">
@@ -76,7 +88,7 @@
                                             >
                                         </textarea></pre>
                                         <small id="courseNameHelp" class="form-text text-muted"></small>
-                                    </div>
+                                    </div>{{newCourse}}
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         <button type="button" @click="addTodo(newCourse, project.courses)" class="btn btn-primary">Add Course</button>
@@ -85,11 +97,54 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <div class="">Tag:</div> 
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                            <label class="form-check-label" for="flexCheckDefault1">
+                                General Education
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                            <label class="form-check-label" for="flexCheckDefault2">
+                                Hobbies Training
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+                            <label class="form-check-label" for="flexCheckDefault3">
+                                Online Training
+                            </label>
+                        </div>  
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+                            <label class="form-check-label" for="flexCheckDefault4">
+                                Others
+                            </label>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="">
+                        <span>
+                            <label for="FormControlPhoto1" class="me-5">Upload Photos(.png .jpg)</label><br>
+                            <input type="file" class="form-control-file" id="FormControlPhoto1">
+                        </span>
+                        <span>
+                        </span>
+                    </div>
+                    <div class="mt-1">
+                        <span>
+                            <label for="FormControlFile1" class="me-5">Upload files(.pdf)</label><br>
+                            <input type="file" class="form-control-file" id="FormControlFile1">
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="mt-3">
-                    <label for="discription">Discription</label> 
+                    <label for="discription">Discription<span class="text-danger">*</span>:</label> 
                     <pre><textarea name="discription"
                         class="form-control"
                         style='min-width: 100%'
@@ -106,12 +161,12 @@
             <div class="row">
                 <div>
                     <input type="checkbox" name="enabled" id="checkbox" v-model="project.enabled">
-                    <label for="enabled" class="ms-2 fs-6">click to activate program, Anyone can apply for the program after you activate it.</label>
+                    <label for="enabled" class="ms-2">click to activate program, Anyone can apply for the program after you activate it.</label>
                 </div>
             </div>
             <div class="row my-3">
                 <div class="text-center">
-                    <button class="btn btn-outline-dark btn-lg mt-2">Submit</button>
+                    <button class="btn btn-outline-dark btn-md mt-2">Submit</button>
                 </div>
             </div>
         </form>
