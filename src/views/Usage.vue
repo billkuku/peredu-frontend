@@ -49,13 +49,14 @@
         </div>
       </div>
     </div>
-    <div v-if="user===null" class="text-center mt-3">
+    <div v-if="user===null" class="text-center my-3">
       <button class="btn btn-outline-dark fs-4" @click="clickToSignin">Join us !</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import RouteTo from "@/mixins/RouteTo";
 import { defineComponent } from "vue";
 import { mapGetters } from 'vuex';
 
@@ -64,6 +65,7 @@ export default defineComponent({
   components: {
     //ValidationProvider
   },
+  mixins: [RouteTo],
   data() {
     return {
       msg:"",
