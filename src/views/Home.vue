@@ -72,13 +72,13 @@ export default defineComponent({
         user: 'auth/user'
       })
     },
-    mounted() {
-      axios
-      .get('/api/auth/test')
-      .then(response => {
-          this.msg = response.data
-      })
-    }
+  mounted() {
+    axios
+    .get('/api/auth/test')
+    .then(response => {
+        this.msg = response.data
+    })
+  }
 })
 
 </script>
