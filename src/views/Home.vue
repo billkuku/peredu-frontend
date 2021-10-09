@@ -46,6 +46,9 @@
       <img class="img-fluid" src="../assets/imagination.png">Others
     </div>
   </div>
+  <div class="text-center mt-5">
+    <button @click="clickToUsage" type="button" class="btn-lg btn-first" style="width: 250px;">Know More About Us</button>
+  </div>
   <p class="text-center mt-5">{{msg}}/backend-server</p>
 </div>
 </template>

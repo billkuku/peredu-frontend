@@ -45,6 +45,9 @@ export default {
         },
         clickToSignin(){
           this.$router.replace({path: '/signin'})
+        },
+        clickToUsage() {
+          this.$router.replace({path:'/usage'})
         }
       }
 }
