@@ -28,7 +28,7 @@
                     <div class="">
                         <label class="">Search Keywords:</label>
                         <div class="">
-                            <input type="text" placeholder="Add keywords help student find program, maximum three words" 
+                            <input type="text" placeholder="" 
                                 class="form-control form-control-sm mb-2"
                                 maxlength="40"
                                 style="min-width: 50%"
@@ -36,17 +36,17 @@
                                 @keyup.enter="addTodo(newKeyword, project.keywords)" 
                                 autofocus>
                             <div class="text-end">
+                                <span>                                
+                                    <todo-item  class="mt-2"
+                                        v-for="(keyword, index) in project.keywords"
+                                        v-bind:key="keyword.index"
+                                        v-bind:value="keyword"
+                                        v-on:delete="deleteTodo(project.keywords, index)">
+                                    </todo-item>
+                                </span>
                                 <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
                                 <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
-                            </div>
-                            <ul class="mt-1">
-                                <todo-item 
-                                    v-for="(keyword, index) in project.keywords"
-                                    v-bind:key="keyword.index"
-                                    v-bind:value="keyword"
-                                    v-on:delete="deleteTodo(project.keywords, index)">
-                                </todo-item>
-                            </ul>                            
+                            </div>                           
                         </div>
                     </div>
                     <div class="mt-2">

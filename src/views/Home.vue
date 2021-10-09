@@ -29,7 +29,10 @@
       <div class="mt-3"><button @click="clickCreateProject" type="button" class="btn-lg btn-first" style="width: 220px;">Publish Program</button></div>
     </div>
   </div>
-  <div class="row mt-5 font-title1-color" v-if="windowInnerWidth>600">
+  <div class="row mt-3 font-title1-color" v-if="windowInnerWidth>600">
+    <div class="text-center slogan">
+      A Platform for All kinds of Education
+    </div>
     <div class="col-sm-3 text-center">
       <img class="img-fluid" src="../assets/lecturehall.png">General Education
     </div>

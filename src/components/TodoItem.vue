@@ -1,7 +1,7 @@
 <template>
-    <p class="btn btn-sm todo-item me-1"
+    <span type=button class="btn-sm todo-item me-1"
         v-on:click="$emit('delete')">{{this.value}} x
-    </p>
+    </span>
 </template>
 
 <script lang="ts">
