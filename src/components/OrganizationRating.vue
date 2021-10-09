@@ -29,7 +29,7 @@
                         </star-rating>
                     </div>
                     <div v-for="(rate, index) in rating.rating" :key="index">
-                        {{rate.criteria}}{{rate.discription}}
+                        {{rate.criteria}}: {{rate.discription}}
                     </div>
                 </div>
             </div>
