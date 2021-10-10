@@ -2,7 +2,7 @@
   <div class="wrapper">
       <globale-header></globale-header>
       <div v-if="$route.path!=='/home'">
-        <search-bar></search-bar>
+        <search-bar class="mb-3"></search-bar>
       </div>
       <div v-if="$route.path==='/home'">
         <searchbar-home v-if="windowInnerWidth>500"></searchbar-home>
