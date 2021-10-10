@@ -41,7 +41,7 @@
               </tr>
             </tbody>
           </table>
-          <div v-if="loadStatus===true">
+          <div v-if="loadStatus===true" class="my-5">
             <div class="fs-3">
               Loading
               <div class="spinner-border text-secondary" role="status">

@@ -27,7 +27,7 @@
       </tbody>
     </table>
   </div>
-  <div v-if="loadStatus===true" class="text-center">
+  <div v-if="loadStatus===true" class="text-center my-5">
     <div class="fs-3">
       Loading
       <div class="spinner-border text-secondary" role="status">

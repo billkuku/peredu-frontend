@@ -9,7 +9,7 @@
         <search-bar v-else></search-bar>
       </div>
       <router-view/>
-      <global-footer class="mt-3"></global-footer>
+      <global-footer class="mt-5"></global-footer>
   </div>
 </template>
 
