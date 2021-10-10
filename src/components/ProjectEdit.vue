@@ -85,8 +85,8 @@
                             </span>
                         </div>
                     </div>
-                    <div>
-                        <div class="">Tag:</div> 
+                    <div class="mt-2">
+                        <div>Tag:</div> 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                             <label class="form-check-label" for="flexCheckDefault1">
