@@ -67,12 +67,13 @@
                                     v-model="newCourse.discription"
                                     placeholder="Discription"
                                     class="form-control form-control-sm"
+                                    @keyup.enter="addCourse(newCourse.courseName, newCourse.discription, project.courses)"
                                     style="min-width: 100%">
                             </div>
                         </div>
                         <div class="text-end">
-                            <span type="button" class="btn-sm btn-first ms-2" @click="addTodo(newCourse, project.courses)">Add Course</span><br>
-                        </div>{{project.courses}}
+                            <span type="button" class="btn-sm btn-first ms-2" @click="addCourse(newCourse.courseName, newCourse.discription, project.courses)">Add Course</span><br>
+                        </div>
                         <div class="text-start">
                             <span class="">
                                 <todo-item class="mt-2"
@@ -153,7 +154,7 @@
             </div>
             <div class="row my-3">
                 <div class="text-center">
-                    <button class="btn btn-outline-dark btn-md mt-2">Submit</button>
+                    <button type="submit" class="btn btn-outline-dark btn-md mt-2">Submit</button>
                 </div>
             </div>
         </form>
