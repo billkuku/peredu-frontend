@@ -36,6 +36,10 @@
                                 @keyup.enter="addTodo(newKeyword, project.keywords)" 
                                 autofocus>
                             <div class="text-end">
+                                <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
+                                <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span><br>
+                            </div>
+                            <div class="text-start">
                                 <span>                                
                                     <todo-item  class="mt-2"
                                         v-for="(keyword, index) in project.keywords"
@@ -44,57 +48,40 @@
                                         v-on:delete="deleteTodo(project.keywords, index)">
                                     </todo-item>
                                 </span>
-                                <span type=button class="btn-sm btn-first ms-2" v-on:click="addTodo(newKeyword, project.keywords)">Add</span>
-                                <span type=button class="btn-sm btn-first ms-2" v-on:click="clearTodos(project.keywords)">Clear</span>
                             </div>                           
                         </div>
                     </div>
                     <div class="mt-2">
                         <div class="">Included Courses:
-                            <span class="d-flex justify-content-end">
-                                <span type="button" class="btn-sm btn-first ms-2" data-bs-toggle="modal" data-bs-target="#courseNameModal">Add course</span>
-                            </span>
-                        </div>
-                        <ul class="mt-1">
-                            <todo-item 
-                                v-for="(course, index) in project.courses"
-                                v-bind:key="course.index"
-                                v-bind:value="course.courseName"
-                                v-on:delete="deleteTodo(project.courses, index)">
-                            </todo-item>
-                        </ul>
-                        <!-- button for modal -->
-
-                        <!-- <p class="text-muted">Add courses included in the program, currently course can't be modified after added, but you can delete and add again.</p> -->
-                        <!-- Modal -->
-                        <div class="modal fade" id="courseNameModal" tabindex="-1" aria-labelledby="#providerNameModal" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="courseNameModal">Add a course</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label for="inputCourseName">course name</label>
-                                        <input type="text"
-                                            v-model="newCourse.courseName" 
-                                            class="form-control" id="inputCourseName" aria-describedby="courseName" 
-                                            placeholder="Enter name">
-                                        <label for="inputCourseDiscription">course discription</label> 
-                                        <pre><textarea 
-                                            class="form-control" id="inputCourseDiscription" 
-                                            rows="3"
-                                            v-model="newCourse.discription"
-                                            >
-                                        </textarea></pre>
-                                        <small id="courseNameHelp" class="form-text text-muted"></small>
-                                    </div>{{newCourse}}
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" @click="addTodo(newCourse, project.courses)" class="btn btn-primary">Add Course</button>
-                                    </div>
-                                </div>
+                            <div class="my-2">
+                                <input type="text"
+                                    maxlength="80"
+                                    v-model="newCourse.courseName" 
+                                    placeholder="Course Name"
+                                    class="form-control form-control-sm"
+                                    style="min-width: 100%">                        
                             </div>
+                            <div class="mb-2">
+                                <input type="text"
+                                    maxlength="80"
+                                    v-model="newCourse.discription"
+                                    placeholder="Discription"
+                                    class="form-control form-control-sm"
+                                    style="min-width: 100%">
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <span type="button" class="btn-sm btn-first ms-2" @click="addTodo(newCourse, project.courses)">Add Course</span><br>
+                        </div>{{project.courses}}
+                        <div class="text-start">
+                            <span class="">
+                                <todo-item class="mt-2"
+                                    v-for="(course, index) in project.courses"
+                                    v-bind:key="course.index"
+                                    v-bind:value="course.courseName"
+                                    v-on:delete="deleteTodo(project.courses, index)">
+                                </todo-item>
+                            </span>
                         </div>
                     </div>
                     <div>

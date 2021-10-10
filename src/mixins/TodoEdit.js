@@ -13,7 +13,7 @@ export default {
             } else {
                 todos.push(newTodo);
                 console.log(todos);
-                newTodo = {};
+                newTodo = "";
 
             }
 
