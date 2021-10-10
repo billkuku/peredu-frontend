@@ -8,7 +8,7 @@
       Framework: Vue<br>
       Loginsystem: Vuex (with javascript)<br>
       Script: Typescript<br>
-      Position: Bootstrap container, colume and row<br>
+      Layout: Bootstrap container, colume and row, etc<br>
       UI-Component: Naive Ui, Bootstrap, NPM-Component<br>
       Icon: Font-Awesome
     <h4>- Backend</h4>
@@ -27,7 +27,7 @@
       Heroku<br>
   </div>
   <div>
-    img source:https://www.freepik.com
+    Image source: https://www.freepik.com
   </div>
 </div>
 
