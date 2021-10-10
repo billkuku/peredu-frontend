@@ -11,7 +11,7 @@
         What you have learned doesn’t help you find a suitable job?
       </div>
     </div>
-    <div class="row p-5 border-4 border-bottom">
+    <div class="row p-5 border-bottom border-4">
       <span>Have you ever thought that the problem does not come from you or the teacher, <br>
       <div class="text-center py-3">
         <em>But simply <strong class="fs-5" style="color:#344955;">inappropriate!</strong></em><br></div>
@@ -23,31 +23,29 @@
       it is difficult for you to get more authentic and useful information.
       </span>
     </div>
-    <div class="row p-5 border-4 border-bottom">
+    <div class="row p-5 border-bottom border-4">
       <div class="text-center fs-4" style="font-family:'Comic Sans MS';">
         Therefore, <strong style="color:#344955;">PEREDU</strong> 
         provides a platform for students and educational institutions to communicate and understand each other.
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12">
-        <div class="px-5 mt-5">
-          <h5><li>What you can do here?</li></h5>
-          <font-awesome-icon icon="school" size="1x" class="fa-color"/>&nbsp;As school, 
-            <div class="ps-3">Publish education programs, let more students know you.</div>
-            <div class="ps-3">Understand the real needs of students through online communication.</div>
-          <font-awesome-icon icon="user-graduate" size="1x" class="fa-color"/>&nbsp;As student, 
-            <div class="ps-3">Create your own evaluation criteria and let the school know your needs.</div>
-            <div class="ps-3">Share and Get education experiences.</div>
-          <h5 class="mt-3"><li>What you can expected from us?</li></h5>
-          Anything could be down by an online education plattform,
-          to help people get better and more appropriate educational resources at each stage.
-          <br><br><h5><li>What is our vision?</li></h5>
-          We want education to let you find your own value at every stage and help you reach your own goal.
-          <br><br><h5><li>What we are doing now?</li></h5>
-          We are building the infrastructure of this plattform.
-          Specifically, we are designing course application.
-        </div>
+      <div class="p-5">
+        <h5><li>What you can do here?</li></h5>
+        <font-awesome-icon icon="school" size="1x" class="fa-color"/>&nbsp;As school, 
+          <div class="ps-3">Publish education programs, let more students know you.</div>
+          <div class="ps-3">Understand the real needs of students through online communication.</div>
+        <font-awesome-icon icon="user-graduate" size="1x" class="fa-color"/>&nbsp;As student, 
+          <div class="ps-3">Create your own evaluation criteria and let the school know your needs.</div>
+          <div class="ps-3">Share and Get education experiences.</div>
+        <h5 class="mt-3"><li>What you can expected from us?</li></h5>
+        Anything could be down by an online education plattform,
+        to help people get better and more appropriate educational resources at each stage.
+        <br><br><h5><li>What is our vision?</li></h5>
+        We want education to let you find your own value at every stage and help you reach your own goal.
+        <br><br><h5><li>What we are doing now?</li></h5>
+        We are building the infrastructure of this plattform.
+        Specifically, we are designing course application.
       </div>
     </div>
     <div v-if="user===null" class="text-center my-3">

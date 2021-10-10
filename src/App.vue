@@ -9,7 +9,7 @@
         <search-bar v-else></search-bar>
       </div>
       <router-view/>
-      <!-- <global-bottom></global-bottom> -->
+      <global-footer class="mt-3"></global-footer>
   </div>
 </template>
 
@@ -17,14 +17,14 @@
 import { defineComponent } from 'vue'
 import GlobaleHeader from './components/GlobalHeader.vue'
 import SearchBar from './components/SearchBar.vue'
-// import GlobalBottom from './components/GlobalBottom.vue'
+import GlobalFooter from './components/GlobalFooter.vue'
 import SearchbarHome from './components/SearchbarHome.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     GlobaleHeader,
-    // GlobalBottom,
+    GlobalFooter,
     SearchBar,
     SearchbarHome
   },
