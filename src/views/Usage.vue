@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row mt-3">
+    <div class="row mt-3 border-bottom border-4">
       <div class="col-sm-5">
         <img class="img-fluid" src="../assets/usage.png">
       </div>
@@ -11,7 +11,7 @@
         What you have learned doesn’t help you find a suitable job?
       </div>
     </div>
-    <div class="row pb-3 p-5 border-4 border-bottom">
+    <div class="row p-5 border-4 border-bottom">
       <span>Have you ever thought that the problem does not come from you or the teacher, <br>
       <div class="text-center py-3">
         <em>But simply <strong class="fs-5" style="color:#344955;">inappropriate!</strong></em><br></div>
@@ -23,14 +23,15 @@
       it is difficult for you to get more authentic and useful information.
       </span>
     </div>
-
+    <div class="row p-5 border-4 border-bottom">
+      <div class="text-center fs-4" style="font-family:'Comic Sans MS';">
+        Therefore, <strong style="color:#344955;">PEREDU</strong> 
+        provides a platform for students and educational institutions to communicate and understand each other.
+      </div>
+    </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="px-5">
-          <div class="text-center py-4 fs-4" style="font-family:'Comic Sans MS';">
-            Therefore, <strong style="color:#344955;">PEREDU</strong> 
-            provides a platform for students and educational institutions to communicate and understand each other.
-          </div>
+        <div class="px-5 mt-5">
           <h5><li>What you can do here?</li></h5>
           <font-awesome-icon icon="school" size="1x" class="fa-color"/>&nbsp;As school, 
             <div class="ps-3">Publish education programs, let more students know you.</div>
