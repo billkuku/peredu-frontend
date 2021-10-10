@@ -33,9 +33,9 @@
         <li class="nav-item  mx-2">
             <dropdown :title="`Hello, `+user">
               <dropdown-item><router-link to="/account" class="dropdown-item">Setting</router-link></dropdown-item>
-              <dropdown-item><router-link to="/experiences" class="dropdown-item">Experiences</router-link></dropdown-item>
-              <dropdown-item><router-link to="/projects" class="dropdown-item">Programs</router-link></dropdown-item>
-              <dropdown-item disabled><a href="#" class="dropdown-item">Im Admin</a></dropdown-item>
+              <dropdown-item><router-link to="/experiences" class="dropdown-item">MyExperiences</router-link></dropdown-item>
+              <dropdown-item><router-link to="/projects" class="dropdown-item">MyPrograms</router-link></dropdown-item>
+              <dropdown-item><router-link to="/dashboard" class="dropdown-item">Dashboard</router-link></dropdown-item>
             </dropdown>
         </li>
         <li>
