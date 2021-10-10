@@ -23,7 +23,8 @@
                         <input type="text"
                             maxlength="80"
                             class="form-control form-control-sm"
-                            style="min-width: 100%">                        
+                            style="min-width: 100%"
+                            v-model="project.website">                        
                     </div>
                     <div class="">
                         <label class="">Search Keywords:</label>
@@ -183,6 +184,7 @@ export default defineComponent({
                 discription: "",
                 enabled: false,
                 providerId: "",
+                website:"",
                 keywords: [],
                 courses:[]
             },
@@ -205,6 +207,7 @@ export default defineComponent({
                     enabled: this.project.enabled,
                     providerId: this.project.providerId,
                     keywords: this.project.keywords,
+                    website: this.project.website,
                     courses: this.project.courses,
                 }
             })
@@ -235,6 +238,7 @@ export default defineComponent({
             discription: "",
             enabled: false,
             providerId: "",
+            website:"",
             keywords:[],
             courses: []
         },

@@ -4,7 +4,7 @@
             <div class="col-sm-2 mt-5">
                 <n-menu class="fs-5" :options="options" style="width: 180px;" default-value="1" />
             </div>
-            <div class="col-sm-9 mt-5 ms-5">
+            <div class="col-sm-9 my-5 ms-5">
                 <router-view v-slot="{ Component }">
                     <keep-alive>
                         <component :is="Component" />
