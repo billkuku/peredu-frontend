@@ -1,11 +1,10 @@
 <template>
-<div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <router-link class="navbar-brand" to="/home"><img src="../assets/logo.png" alt="Peredu-Logo" width="110"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
           <router-link to="/home" class="nav-link text-dark fs-6">Home</router-link>
@@ -44,7 +43,6 @@
       </ul>
     </div>
   </nav>
-</div>
 </template>
 
 <script lang="ts">
@@ -81,3 +79,15 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+.nav-link:hover {
+  background-color: lightgray;
+}
+.nav-link:active {
+  background-color: gray;
+}
+.dropdown-item:active {
+  background-color: gray;
+}
+</style>
