@@ -3,11 +3,6 @@ import store from '@/store'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/test',
-    name: 'Test',
-    component: () => import(/* webpackChunkName: "home" */ '../views/TechStack.vue'),
-  },
-  {
     path: '/home',
     name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
@@ -31,6 +26,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/usage',
     name: 'Usage',
     component: () => import(/* webpackChunkName: "home" */ '../views/Usage.vue'),
+  },
+  {
+    path: '/tech',
+    name: 'Tech',
+    component: () => import(/* webpackChunkName: "home" */ '../views/TechStack.vue'),
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Test.vue'),
   },
   {
     path: '/account',

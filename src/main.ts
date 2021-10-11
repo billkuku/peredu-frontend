@@ -9,8 +9,6 @@ import { faArchive, faEdit, faInbox, faStar, faUserSecret, faTrashAlt, faStarHal
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // https://www.npmjs.com/package/vue-star-rating
 import StarRating from 'vue-star-rating';
-// import { DatePicker } from "ant-design-vue";
-// import "ant-design-vue/dist/antd.css"
 import axios from 'axios'
 import {
     // create naive ui
