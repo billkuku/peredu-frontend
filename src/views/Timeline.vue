@@ -50,7 +50,7 @@
           <n-timeline-item
             type="info"
             title="Naive UI comes up"
-            content="I used to like to sleep with my eyes open, the dark mystery attracts me. Now I prefer close my eyes tightly."
+            content="I used to sleep with my eyes open, the dark mystery attracts me. Now I prefer close my eyes tightly."
             time="2021-Sep"
           />
           <n-timeline-item
