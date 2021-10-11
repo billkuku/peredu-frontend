@@ -8,7 +8,7 @@
       Framework: Vue<br>
       Loginsystem: Vuex (with javascript)<br>
       Script: Typescript<br>
-      Layout: Bootstrap container, colume and row (so called responsive)<br>
+      Layout: Bootstrap container, colume and row (responsive)<br>
       UI-Component: Naive Ui, Bootstrap, NPM-Component<br>
       Icon: Font-Awesome
     <h4>- Backend</h4>
