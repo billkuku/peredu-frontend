@@ -118,9 +118,9 @@
                     <div class="">
                         <span>
                             <label for="FormControlPhoto1" class="me-5">Upload Photos(.png .jpg)</label><br>
-                            <input type="file" class="form-control-file" id="FormControlPhoto1">
+                            <input type="file" class="form-control-file" id="FormControlPhoto1" @change="addProgramImage($event)">
                         </span>
-                        <span>
+                        <span>{{project.programImages}}
                         </span>
                     </div>
                     <div class="mt-1">
@@ -186,7 +186,8 @@ export default defineComponent({
                 providerId: "",
                 website:"",
                 keywords: [],
-                courses:[]
+                courses:[],
+                programImages: [undefined||File||null||Object]
             },
             newKeyword:"",
             newCourse:{
@@ -209,6 +210,7 @@ export default defineComponent({
                     keywords: this.project.keywords,
                     website: this.project.website,
                     courses: this.project.courses,
+                    programImages: this.project.programImages
                 }
             })
             .then(response => {
@@ -227,6 +229,16 @@ export default defineComponent({
                 })
             }
         },
+        addProgramImage(event) {
+            // this.project.programImages = event.target.files
+            // this.project.programImages.push(event.target.files[0])
+            for(var i=0; i<event.target.files.length;){
+                this.project.programImages.push(event.target.files[i])
+                i++
+            }
+            // console.log(event.target.files[0])
+            console.log('imgs are: '+this.project.programImages)
+        }
     },
     activated: function() {
         this.getProject()
@@ -240,7 +252,8 @@ export default defineComponent({
             providerId: "",
             website:"",
             keywords:[],
-            courses: []
+            courses: [],
+            programImages:[]
         },
         this.newKeyword=""
     }
