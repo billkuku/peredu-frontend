@@ -118,7 +118,7 @@
                     <div class="">
                         <span>
                             <label for="FormControlPhoto1" class="me-5">Upload Photos(.png .jpg)</label><br>
-                            <input type="file" class="form-control-file" id="FormControlPhoto1" @change="addProgramImage($event)">
+                            <input type="file" class="form-control-file" multiple id="FormControlPhoto1" @change="addProgramImage($event)">
                         </span>
                         <span>{{project.programImages}}
                         </span>
@@ -187,7 +187,7 @@ export default defineComponent({
                 website:"",
                 keywords: [],
                 courses:[],
-                programImages: [undefined||File||null||Object]
+                programImages: []
             },
             newKeyword:"",
             newCourse:{
@@ -230,14 +230,7 @@ export default defineComponent({
             }
         },
         addProgramImage(event) {
-            // this.project.programImages = event.target.files
-            // this.project.programImages.push(event.target.files[0])
-            for(var i=0; i<event.target.files.length;){
-                this.project.programImages.push(event.target.files[i])
-                i++
-            }
-            // console.log(event.target.files[0])
-            console.log('imgs are: '+this.project.programImages)
+            this.project.programImages = Array.from(event.target.files)
         }
     },
     activated: function() {

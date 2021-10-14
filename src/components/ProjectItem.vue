@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <h2 class="col-sm-9">{{currentProject.projectName}}</h2>
-
+        {{currentProject.programImages.length}}
         <font-awesome-icon @click="createExperience()" type="button" icon="star-half-alt" size="3x" class="col-sm-1 icon"
             data-bs-toggle="tooltip" data-bs-placement="top" title="leave a rating to the program"/>
         <font-awesome-icon type="button" icon="share-square" size="3x" class="col-sm-1 icon"
