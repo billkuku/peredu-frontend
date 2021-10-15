@@ -24,7 +24,7 @@
             time="2021-June"
           />
           <n-timeline-item
-            type="info"
+            type="error"
             title="Give up Thymeleaf, Jsp, Ajax, etc."
             content="Yearning for a newer world, sometimes necessary to stop loss in time."
             time="2021-June"
