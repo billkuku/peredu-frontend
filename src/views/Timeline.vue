@@ -25,7 +25,13 @@
           />
           <n-timeline-item
             type="info"
-            title="Vue decided and learned."
+            title="Give up Thymeleaf, Jsp, Ajax, etc."
+            content="Yearning for a newer world, sometimes necessary to stop loss in time."
+            time="2021-June"
+          />
+          <n-timeline-item
+            type="info"
+            title="Vue decided and learned, reconfigure backend for frontend."
             content="I want to own the whole world, even if it’s not perfect."
             time="2021-June"
           />
@@ -43,7 +49,7 @@
           />
           <n-timeline-item
             type="success"
-            title="Fullstack deployed"
+            title="Fullstack deployed on Heroku"
             content="Money can solve problems that need money to solve...  !!!But money is invented by people"
             time="2021-Sep"
           />
@@ -55,9 +61,9 @@
           />
           <n-timeline-item
             type="warning"
-            title="to be continued"
+            title="Pause, take a break."
             content=""
-            time=""
+            time="2021-Oct-12"
           />
         </n-timeline>
     
