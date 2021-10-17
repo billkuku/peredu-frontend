@@ -13,7 +13,7 @@
             time="2021-April"
           />
           <n-timeline-item
-            title="Learn Spring"
+            title="Learn Spring and it's ecosystem"
             content="Learning can deprive the brain of control over the body."
             time="2021-May"
           />
@@ -25,7 +25,7 @@
           />
           <n-timeline-item
             type="error"
-            title="Give up Thymeleaf, Jsp, Ajax, etc."
+            title="Give up some technologies that are no longer suitable, e.g. Thymeleaf, Jsp, Ajax etc."
             content="Yearning for a newer world, sometimes necessary to stop loss in time."
             time="2021-June"
           />
@@ -37,7 +37,7 @@
           />
           <n-timeline-item 
           type="error" 
-          title="Switch from Session-based-login to Java-Web-Token"
+          title="Switch from Session-based-auth to Java-Web-Token"
           content="It is always so difficult to overthrow oneself, but if overthrowing oneself is the truth."
           time="2021-June" 
           />
@@ -61,7 +61,7 @@
           />
           <n-timeline-item
             type="warning"
-            title="Pause, take a break."
+            title="Pause, take a break. I need a job."
             content=""
             time="2021-Oct-12"
           />

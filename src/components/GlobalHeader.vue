@@ -13,7 +13,7 @@
           <router-link to="/usage" class="nav-link text-dark fs-6">Usage</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about" class="nav-link text-dark fs-6">About</router-link>
+          <router-link to="/about" class="nav-link text-dark fs-6">TimeLine</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/tech" class="nav-link text-dark fs-6">TechStacks</router-link>
