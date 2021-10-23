@@ -65,6 +65,12 @@
             content=""
             time="2021-Oct-12"
           />
+          <n-timeline-item
+            type="info"
+            title="Back to work, finding balance between peredu and others"
+            content="Spoon and cake barely come together, need find them out, but is spoon really necessary?"
+            time="2021-Oct-24"
+          />
         </n-timeline>
     
       </div>
