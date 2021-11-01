@@ -19,6 +19,8 @@
       Database: MongoDB<br>
       SearchEngine: MongoDB<br>
     <h4>- Other Tools</h4>
+      MockPlus<br>
+      Photoshop<br>
       MongoCompass<br>
       Postman<br>
       Eclipse<br>
