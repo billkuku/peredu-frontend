@@ -92,7 +92,7 @@
           <n-timeline-item
             type="info"
             title="Find a real challenge"
-            content="There must be a way, or I will start to make it out."
+            content="There must be a way, or I will start to create."
             time="2021-May-4"
           />
         </n-timeline>
