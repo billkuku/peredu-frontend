@@ -73,9 +73,27 @@
           />
           <n-timeline-item
             type="info"
-            title="Back to work, finding balance between peredu and others"
-            content="Spoon and cake barely come together, need find them out, but is spoon really necessary?"
-            time="2021-Nov-4"
+            title="Got Job, start with my new Project with jakarta, JavaFX, mysql, this job was temp. stoped"
+            content="Do right at right time"
+            time="2021-Dec-1"
+          />
+          <n-timeline-item
+            type="info"
+            title="start with my new Project with c#, nx"
+            content="much boring, should no last"
+            time="2021-Feb-4"
+          />
+          <n-timeline-item
+            type="info"
+            title="I tried, but failed, yes it's my fault."
+            content="Do right things at right place."
+            time="2021-Feb-4"
+          />
+          <n-timeline-item
+            type="info"
+            title="Find a real challenge"
+            content="There must be a way, or I will start to make it out."
+            time="2021-May-4"
           />
         </n-timeline>
     
