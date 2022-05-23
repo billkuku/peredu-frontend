@@ -91,14 +91,8 @@
           />
           <n-timeline-item
             type="info"
-            title="Find a real challenge"
+            title="Restart the job"
             content="There must be a way, or I will start to create."
-            time="2021-May-4"
-          />
-          <n-timeline-item
-            type="info"
-            title="Find a real challenge"
-            content="TEST CHANGE1"
             time="2021-May-4"
           />
         </n-timeline>
