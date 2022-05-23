@@ -98,7 +98,7 @@
           <n-timeline-item
             type="info"
             title="Find a real challenge"
-            content="TEST CHANGE"
+            content="TEST CHANGE1"
             time="2021-May-4"
           />
         </n-timeline>
