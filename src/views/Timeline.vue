@@ -86,12 +86,12 @@
           <n-timeline-item
             type="info"
             title="I tried, but failed, yes it's my fault."
-            content="Do right things at right place."
+            content="Do right things at right place in right time."
             time="2021-Feb-4"
           />
           <n-timeline-item
             type="info"
-            title="Restart the job"
+            title="Rethink the job"
             content="There must be a way, or I will start to create."
             time="2021-May-4"
           />
